@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="aboutme.css">
+  
+  <title>Emre Kantar</title>
+</head>
+<body>
+  <!--NAVBAR-->
+	<nav class="navbar">
+		<div class="brand">
+			<img class="hideLogo" src="Photos/PP v2 Yakın.png" alt="Emre Kantar">
+			<h2><a href="">Emre Kantar</a></h2>
+		</div>
+		<div class="links">
+			<div class="nav">
+				<a class="hideOnMobile" href="#">About</a>
+				<a class="hideOnMobile" href="#edulink">Education</a>
+				<a class="hideOnMobile" href="#expelink">Experience</a>
+				<a class="hideOnMobile" href="#prolink">Projects</a>
+				<a class="hideOnMobile" href="#awalink">Awards</a>
+				<a class="hideOnMobile" href="#">Contact</a>
+				</div>
+				<a onclick=showSidebar() class="menu-button" href="#"><svg xmlns="http://www.w3.org/2000/svg" heigth="48px" viewBox="0 -960 960 960" width="4vh" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+				
+
+				<ul class="sidebar">
+					<a onclick=hideSidebar() class="close-button" href=""><svg xmlns="http://www.w3.org/2000/svg" height="6vh" viewBox="0 -960 960 960" width="6vh" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+					<img src="Photos/PP v2 Yakın.png" alt="Emre Kantar">
+					<h2>Emre Kantar</h2>
+					<hr>
+					<a onclick=hideSidebar() class="side-links" href="#">About</a>
+					<a onclick=hideSidebar() class="side-links" href="#edulink">Education</a>
+					<a onclick=hideSidebar() class="side-links" href="#expelink">Experience</a>
+					<a onclick=hideSidebar() class="side-links" href="#prolink">Projects</a>
+					<a onclick=hideSidebar() class="side-links" href="#awalink">Awards</a>
+					<a onclick=hideSidebar() class="side-links" href="#">Contact</a>
+				</ul>
+		</div>
+	</nav>
+	<!--NAVBAR-->
+	<!--ABOUT-->
+	<section class="hero" id="about">
+    <div class="container">
+      <h1 style="font-size: 2rem;">👋 Hello, I'm <span>Emre Kantar</span></h1>
+			<h3>STEM Student | SolidWorks & CAD Designer | Tech Project Leader</h2>
+      <p><strong> A high school student passionate about mechanical design, engineering, and academic excellence. I'm committed to impactful projects, community initiatives, and technological innovation.</strong></p>
+      <div class="collaboration">
+				<div style="flex-direction: column; display: flex;">
+					<a href="mailto:emrekantar09@gmail.com" class="btn">Get in Touch</a>
+					<div id="socials-list">
+						<a class="socials" href="https://www.linkedin.com/in/emre-kantar" target="_blank"><img  src="/Assets/SVGs/linkedin-svgrepo-com (3).svg" alt="LinkedIn" ></a>
+						<a class="socials" href="https://www.fiverr.com/s/dDGm6q2" target="_blank"><img src="/Assets/SVGs/fiverr-svgrepo-com.svg" alt=""></a>
+						<a class="socials" href="mailto:emrekantar09@gmail.com" target="_blank"><img src="/Assets/SVGs//gmail-svgrepo-com.svg" alt=""></a>
+					</div>
+				</div>
+				<div class="collab-text">
+					Always excited to contribute to meaningful projects and open to new collaborations!
+				</div>
+			</div>
+    </div>
+  </section>
+	<!--ABOUT-->
+	<!--SKILLS-->
+	<section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title">🌟 Top Skills</h2>
+			<ul class="item-list" id="skill-list">
+				<div id="edulink"></div>
+				
+				<li class="skill"><strong>Mechanical Product Design</strong></li>
+				<li class="skill"><strong>Teamwork & Team Management</strong></li>
+				<li class="skill"><strong>SOLIDWORKS 3D CAD</strong></li>
+				<li class="skill"><strong>Mathematics</strong></li>
+				<li class="skill"><strong>Leadership</strong></li>
+				
+			</ul>
+    </div>
+  </section>
+	<!--SKILLS-->
+	<!--EDUCATION-->
+	
+	<section id="education" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">🎓 Education & Courses</h2>
+      <ul class="item-list">
+        <li><strong>Izmir Bahçeşehir College 50th Year Sci-Tech High School</strong> <br>Class of 2027</li>
+        <li><strong>Science and Art Centers (BILSEM) Student</strong> — Mathematics & Informatics<br>2018 - Present</li>
+        <li><strong>METU Engineering Summer School</strong> — Theoretical & Applied Labs + 1st Place in Mars Colonization Project Competition<br>June 30 - July 11, 2025</li>
+        <li><strong>Sabancı Applied Nanotechnology School</strong> — SUNUM lab experience & MEMS/NEMS studies<br>July 21 - August 1, 2025</li>
+      </ul>
+			<div id="expelink"></div>
+    </div>
+  </section>
+	<!--EDUCATION-->
+	<!--EXPERIENCE-->
+	<section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">🚀 Leadership & Experience</h2>
+      <ul class="item-list">
+        <li><strong><a href="https://emtprojects.net">EMT Projects</a></strong> — Co-Founder, CAD Instructor <br>June 2024 – Present</li>
+        <li><strong>CicekliAI</strong> — Media Department Manager<br>December 2023 - Present</li>
+				<li><strong>FRC Team 4th Dimension #6429</strong> — CAD Subteam Member<br>July 2025 - Present</li>
+				<li><strong>Sustain for Globe Student Organization</strong> — Volunteer Sustainability Activist <br>February 2024 - Present</li>
+        <li><strong>Çiçekli 4’33 Magazine</strong> — Magazine Author <br> September 2024 - June 2025</li>
+        <li><strong>Association for Supporting Contemporary Life (ÇYDD)</strong> — Volunteer Mathematics Tutor <br>October 2024 - February 2025</li>
+      </ul>
+			<div id="prolink"></div>
+    </div>
+  </section>
+	<!--EXPERIENCE-->
+
+	<!--PROJECTS-->
+  <section id="projects" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">🗂️ Selected Projects</h2>
+      <ul class="item-list">
+        <li><strong>EnergyCore:</strong> Development of a Portable Battery System for Emergency Range Extension in Electric Vehicles <br>2024 - 2025</li>
+        <li><strong>AGROBOT:</strong> Design of an Autonomous Agricultural Vehicle for Automated Seeding and Irrigation <br>2023 - 2024 </li>
+        <li><strong>Cosmic Acoustics:</strong> Melodic Generation from Galaxy Images via Golden Ratio-Based Pixel Analysis and Fractal Geometry <br>2023 - 2024</li>
+        <li><strong>FlyThrough:</strong> Development of an Autonomous Flying Car System: Sensor Integration, Algorithm Selection, and Simulation-Based Testing <br>2023 - 2024
+				</li>
+      </ul>
+			<div id="awalink"></div>
+    </div>
+  </section>
+	<!--PROJECTS-->
+
+	<!--AWARDS-->
+  <section id="awards" class="section">
+    <div class="container">
+      <h2 class="section-title">🏆 Awards & Achievements</h2>
+      <ul class="item-list">
+
+				<li><strong>2025</strong></li>
+				<li>🥉 Bronze Medal – International Basic Sciences Knowledge Contest (URFODU), Mathematics Field</li>
+				<li>🥉 Bronze Medal– Turkic International Mathematical Olympiad (TIMO)</li>
+				<li>🏅 Finalist – Asia International Mathematical Olympiad (AIMO)</li> <br>
+				<li><strong>2024</strong></li>
+				<li>🥇 Gold Medal– International Kangaroo Mathematics Competition Turkey</li>
+				<li>🥇 1st Place – Sigma STEAM Club Project Competition, Cosmic Acoustics</li>
+				<li>🥉 3rd Place – World Robotic Olimpiads (WRO) Turkey, Future Engineers Category</li> 
+				<li>🏅 Certificate of Distinction – Canadian Intermediate Mathematics Contest, organised by CEMC / University of Waterloo</li>
+				<li>🏅 Certificate of Distinction – Pascal Contest, organised by CEMC / University of Waterloo</li>
+				<li>🏅 Certificate of Distinction – Fryer Contest, organised by CEMC / University of Waterloo</li>
+				<li>🏅 Certificate of Achievement, World Top 5% – Caribou Mathematics Global Ranking</li><br>
+				<li><strong>2023</strong></li>
+				<li>🥈 Silver Medal– Izmir Science Olympiad (IZBO) Mathematics Field</li>   
+				<li>🥉 Bronze Medal– Türkiye Mathematics Competition (TMY)</li>     
+        <li>🥉 Bronze Medal– Izmir Science High School Inter-Secondary Mathematics Competition</li>
+
+      </ul>
+    </div>
+  </section>
+	<!--AWARDS-->
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Emre Kantar • All rights reserved</p>
+			<div id="socials-list">
+				<a class="socials" href="https://www.linkedin.com/in/emre-kantar" target="_blank"><img src="/Assets/SVGs/linkedin-svgrepo-com white.svg" alt="LinkedIn" ></a>
+				<a class="socials" href="https://www.fiverr.com/s/dDGm6q2" target="_blank"><img src="/Assets/SVGs/fiverr-svgrepo-com white.svg" alt=""></a>
+				<a class="socials" href="mailto:emrekantar09@gmail.com" target="_blank"><img src="/Assets/SVGs//gmail-svgrepo-com white.svg" alt=""></a>
+			</div>
+			<p style="margin-top: 1rem;">📍Izmir, Türkiye</p>
+    </div>
+  </footer>
+
+	<script>
+		function showSidebar(){
+			const sidebar = document.querySelector('.sidebar')
+			sidebar.style.display= 'flex'
+		}
+
+		function hideSidebar() {
+			const sidebar = document.querySelector('.sidebar')
+			sidebar.style.display= 'none'
+		}
+
+		document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Thank you for your message, I will get back to you soon!');
+});
+
+	</script>
+  
+  
+</body>
+</html>
