@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/CSS/navbar.css">
+  <link rel="stylesheet" href="/CSS/footer.css" />
+  <link rel="stylesheet" href="/CSS/contact.css">
+
+  
+
+  
+
+  <title>Contact | Emre Kantar</title>
+  <link class="favicon" rel="shortcut icon" href="/Photos/ITKMUN PP Y.png" type="image/x-icon">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <img class="hideLogo" src="/photos/ITKMUN PP y.png" alt="Emre Kantar" />
+      <h2><a href="index.html">Emre Kantar</a></h2>
+    </div>
+    <div class="links">
+      <div class="nav">
+        <a class="hideOnMobile" href="index.html">About</a>
+        <a class="hideOnMobile" href="projects.html">Projects</a>
+        <a class="hideOnMobile" href="resume.html">Resume</a>
+        
+        <a class="hideOnMobile" href="contact.html">Contact</a>
+      </div>
+      <a onclick="showSidebar()" class="menu-button" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="4vh" fill="#e8eaed">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </a>
+
+      <ul class="sidebar">
+        <a onclick="hideSidebar()" class="close-button" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" height="6vh" viewBox="0 -960 960 960" width="6vh" fill="#e8eaed">
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </a>
+        <img src="/Photos/ITKMUN PP Y.png" alt="Emre Kantar" />
+        <h2>Emre Kantar</h2>
+        <hr />
+        <a onclick="hideSidebar()" class="side-links" href="index.html">About</a>
+        <a onclick="hideSidebar()" class="side-links" href="projects.html">Projects</a>
+        <a onclick="hideSidebar()" class="side-links" href="resume.html">Resume</a>
+        
+        <a onclick="hideSidebar()" class="side-links" href="contact.html">Contact</a>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="contact-container" role="main" aria-label="Contact page">
+
+    <h1>Get in Touch</h1>
+    <p class="intro">
+      I welcome your questions, project and collaboration ideas. 
+      Whether you want to discuss a new venture or simply say hello, please use the form below or the contact details provided.
+    </p>
+
+    <div class="contact-flex">
+      <!-- Contact form -->
+      <form id="contact-form" class="contact-form" >
+        <label for="name">Name <sup>*</sup></label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email <sup>*</sup></label>
+        <input type="email" id="email" name="_replyto" placeholder="you@example.com" required />
+
+        <label for="subject">Subject <sup>*</sup> </label>
+        <input type="text" id="subject" name="subject" placeholder="Subject of your message" required/>
+
+        <label for="message">Message <sup>*</sup></label>
+        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit" aria-label="Send message">Send Message</button>
+      </form>
+
+      <!-- Contact info -->
+      <aside class="contact-info" aria-label="Contact information">
+        <h2>Contact Details</h2>
+        <p><strong>Email: </strong> <a href="mailto:emrekantar@example.com">kantar.emre@outlook.com</a></p>
+        <!--<p><strong>Phone:</strong> <a href="tel:+905xxxxxxxxx">+90 5XX XXX XX XX</a></p>-->
+        <p><strong>LinkedIn: </strong> <a href="https://www.linkedin.com/in/emre-kantar" target="_blank" rel="noopener" >Emre Kantar</a></p>
+        <p><strong>Fiverr: </strong> <a href="https://www.fiverr.com/s/dDGm6q2" target="_blank" rel="noopener" >@emre_kantar</a></p>
+
+        <p><strong>Location: </strong> Izmir, Türkiye</p>
+
+      </aside>
+    </div>
+
+  </main>
+
+
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Emre Kantar • All rights reserved</p>
+			<div id="socials-list">
+				<a class="socials" href="https://www.linkedin.com/in/emre-kantar" target="_blank"><img src="/Assets/SVGs/linkedin-svgrepo-com white.svg" alt="LinkedIn" ></a>
+				<a class="socials" href="https://www.fiverr.com/s/dDGm6q2" target="_blank"><img src="/Assets/SVGs/fiverr-svgrepo-com white.svg" alt=""></a>
+				<a class="socials" href="/Site/contact.html"><img src="/Assets/SVGs//gmail-svgrepo-com white.svg" alt=""></a>
+			</div>
+			<p style="margin-top: 1rem;">📍Izmir, Türkiye</p>
+    </div>
+  </footer>
+
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+<script>
+  (function() {
+    emailjs.init('zZM_JSUdVFwUNEDoe');
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const templateParams = {
+      name: document.getElementById('name').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      subject: document.getElementById('subject').value.trim(),
+      message: document.getElementById('message').value.trim()
+    };
+
+    emailjs.send('service_x1ed7sq', 'template_fokvws8', templateParams)
+      .then(function(response) {
+        alert('Mesaj başarıyla gönderildi!');
+        this.reset();
+      }.bind(this))
+      .catch(function(error) {
+        alert('Mesaj gönderilirken hata oluştu.');
+        console.error('EmailJS error:', error);
+      });
+  });
+</script>
+
+
+  <script>
+    function showSidebar() {
+      document.querySelector('.sidebar').style.display = 'flex';
+    }
+    function hideSidebar() {
+      document.querySelector('.sidebar').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
