@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../aboutme.css" />
+
+  <title>How to Approach Complex Mechanical Design Projects | Emre Kantar</title>
+
+  <style>
+    /* Genel container */
+    main.blog-post-content {
+      max-width: 900px;
+      width: 90%;
+      margin: 14vh auto 5rem;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    /* Başlık ve tarih */
+    main.blog-post-content h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+      text-align: center;
+    }
+    main.blog-post-content time {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #888;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Yazar ve kategori bilgisi */
+    .post-meta {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      color: #666;
+      font-weight: 600;
+    }
+    .post-meta span {
+      background-color: #f0f0f0;
+      padding: 5px 15px;
+      border-radius: 20px;
+      user-select: none;
+    }
+
+    /* Görsel alanı */
+    main.blog-post-content img.post-image {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 2rem 0;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* İçerik paragrafları */
+    main.blog-post-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Alt başlıklar */
+    main.blog-post-content h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    main.blog-post-content h3 {
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    /* Alıntılar */
+    blockquote {
+      border-left: 4px solid #ff6600;
+      padding-left: 1rem;
+      margin: 1.5rem 0 2rem 0;
+      color: #555;
+      font-style: italic;
+      background-color: #fff7f0;
+      border-radius: 4px;
+    }
+
+    /* Sosyal paylaşım butonları */
+    .social-share {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .social-share p {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .social-icons a {
+      display: inline-block;
+      background-color: #ff6600;
+      color: white;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 1.3rem;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      background-color: #e65500;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main.blog-post-content h1 {
+        font-size: 2rem;
+      }
+      main.blog-post-content h2 {
+        font-size: 1.5rem;
+      }
+      main.blog-post-content h3 {
+        font-size: 1.2rem;
+      }
+      .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar (sizin navbar kodunuz) -->
+  <nav class="navbar">
+    <div class="brand">
+      <img class="hideLogo" src="../Photos/PP v2 Yakın.png" alt="Emre Kantar" />
+      <h2><a href="../index.html">Emre Kantar</a></h2>
+    </div>
+    <div class="links">
+      <div class="nav">
+        <a class="hideOnMobile" href="../about.html">About</a>
+        <a class="hideOnMobile" href="../index.html#edulink">Education</a>
+        <a class="hideOnMobile" href="../index.html#expelink">Experience</a>
+        <a class="hideOnMobile" href="../projects.html">Projects</a>
+        <a class="hideOnMobile" href="../index.html#awalink">Awards</a>
+        <a class="hideOnMobile" href="../contact.html">Contact</a>
+      </div>
+      <a onclick="showSidebar()" class="menu-button" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="4vh" fill="#e8eaed">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </a>
+
+      <ul class="sidebar">
+        <a onclick="hideSidebar()" class="close-button" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" height="6vh" viewBox="0 -960 960 960" width="6vh" fill="#e8eaed">
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </a>
+        <img src="../Photos/PP v2 Yakın.png" alt="Emre Kantar" />
+        <h2>Emre Kantar</h2>
+        <hr />
+        <a onclick="hideSidebar()" class="side-links" href="../about.html">About</a>
+        <a onclick="hideSidebar()" class="side-links" href="../index.html#edulink">Education</a>
+        <a onclick="hideSidebar()" class="side-links" href="../index.html#expelink">Experience</a>
+        <a onclick="hideSidebar()" class="side-links" href="../projects.html">Projects</a>
+        <a onclick="hideSidebar()" class="side-links" href="../index.html#awalink">Awards</a>
+        <a onclick="hideSidebar()" class="side-links" href="../contact.html">Contact</a>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="blog-post-content" role="main" aria-label="Blog post content">
+
+    <h1>How to Approach Complex Mechanical Design Projects</h1>
+    <time datetime="2025-07-15">July 15, 2025</time>
+
+    <div class="post-meta" aria-label="Post metadata">
+      <span>Author: Emre Kantar</span>
+      <span>Category: Design</span>
+    </div>
+
+    <img src="../Photos/blog/complex-mechanical-design.jpg" alt="Example of mechanical design" class="post-image" />
+
+    <p>
+      Tackling complex mechanical designs requires systematic thinking and a solid process. Breaking the problem down into manageable components allows for focused analysis and efficient CAD modeling.
+    </p>
+
+    <h2>Understanding the Project Requirements</h2>
+    <p>
+      The first step is to thoroughly analyze the project specifications and constraints. Clear understanding reduces revisions and streamlines the design process.
+    </p>
+
+    <h2>Conceptual Design and Sketching</h2>
+    <p>
+      Before diving into CAD, hand sketches and rough ideas help clarify the main components and interactions. This phase encourages creativity and flexible thinking.
+    </p>
+
+    <img src="../Photos/blog/design-sketch.jpg" alt="Conceptual design sketches" class="post-image" />
+
+    <h2>CAD Modeling in SolidWorks</h2>
+    <p>
+      Using SolidWorks, detailed 3D models are created following best practices such as modular design, parametric features, and proper constraints.
+    </p>
+
+    <blockquote>
+      "Effective CAD modeling is the backbone of successful mechanical design."
+    </blockquote>
+
+    <h3>Simulation and Testing</h3>
+    <p>
+      Running simulations early in the process identifies potential failure points and allows optimization without costly prototypes.
+    </p>
+
+    <h3>Iterative Improvement and Feedback</h3>
+    <p>
+      Design should evolve through continuous feedback and testing. Version control and documentation are key for team collaboration.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      Managing complex mechanical projects requires a balance of creativity, technical knowledge, and structured workflow. With careful planning and the right tools, successful designs are achievable.
+    </p>
+
+    <div class="social-share" aria-label="Share this post">
+      <p>Share this article:</p>
+      <div class="social-icons">
+        <a href="https://twitter.com/intent/tweet?url=https://emrekantar.net/blog/complex-mechanical-design.html&text=How%20to%20Approach%20Complex%20Mechanical%20Design%20Projects" target="_blank" rel="noopener" aria-label="Share on Twitter" title="Share on Twitter">
+          &#x1F426;
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://emrekantar.net/blog/complex-mechanical-design.html&title=How%20to%20Approach%20Complex%20Mechanical%20Design%20Projects" target="_blank" rel="noopener" aria-label="Share on LinkedIn" title="Share on LinkedIn">
+          &#x1F4E1;
+        </a>
+        <a href="mailto:?subject=How to Approach Complex Mechanical Design Projects&body=Check out this article: https://emrekantar.net/blog/complex-mechanical-design.html" aria-label="Share by Email" title="Share by Email">
+          &#x2709;
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function showSidebar() {
+      document.querySelector('.sidebar').style.display = 'block';
+    }
+    function hideSidebar() {
+      document.querySelector('.sidebar').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+
+/*Footer*/
+footer {
+  background: #101820;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+footer p {
+  color: #ffffff;
+}
+
+
+#socials-list{
+  margin: 1.5rem 0 0;
+  justify-content: center;
+  display: flex;
+  gap: 0.5rem;
+}
+.socials img {
+  height: 2.5rem;
+}

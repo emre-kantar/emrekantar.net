@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../aboutme.css" />
+  
+  <title>Mars Underground Habitat Module | Emre Kantar</title>
+  
+  <style>
+    /* Project page styling */
+    .project-header {
+      max-width: 900px;
+      margin: 3rem auto 1.5rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .project-header h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+    .project-header p {
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Main featured image */
+    .project-featured-image {
+      display: block;
+      max-width: 900px;
+      width: 100%;
+      margin: 2rem auto 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      object-fit: cover;
+    }
+
+    /* Image gallery grid */
+    .image-gallery {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .image-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      object-fit: cover;
+      height: 180px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+      line-height: 1.7;
+      color: #333;
+      font-size: 1.1rem;
+    }
+    .project-content h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #ff6600;
+    }
+    .back-btn {
+      display: inline-block;
+      margin: 2rem auto 4rem;
+      background-color: #ff6600;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      max-width: 150px;
+    }
+    .back-btn:hover {
+      background-color: #e65500;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .project-header h1 {
+        font-size: 2rem;
+      }
+      .project-header p,
+      .project-content {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar (your existing code) -->
+  <nav class="navbar">
+    <div class="brand">
+      <img class="hideLogo" src="../Photos/PP v2 Yakın.png" alt="Emre Kantar" />
+      <h2><a href="../index.html">Emre Kantar</a></h2>
+    </div>
+    <div class="links">
+      <div class="nav">
+        <a class="hideOnMobile" href="../about.html">About</a>
+        <a class="hideOnMobile" href="../index.html#edulink">Education</a>
+        <a class="hideOnMobile" href="../index.html#expelink">Experience</a>
+        <a class="hideOnMobile active" href="../projects.html">Projects</a>
+        <a class="hideOnMobile" href="../index.html#awalink">Awards</a>
+        <a class="hideOnMobile" href="../contact.html">Contact</a>
+      </div>
+      <a onclick="showSidebar()" class="menu-button" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="4vh" fill="#e8eaed">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </a>
+
+      <ul class="sidebar">
+        <a onclick="hideSidebar()" class="close-button" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" height="6vh" viewBox="0 -960 960 960" width="6vh" fill="#e8eaed">
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </a>
+        <img src="../Photos/PP v2 Yakın.png" alt="Emre Kantar" />
+        <h2>Emre Kantar</h2>
+        <hr />
+        <a onclick="hideSidebar()" class="side-links" href="../about.html">About</a>
+        <a onclick="hideSidebar()" class="side-links" href="../index.html#edulink">Education</a>
+        <a onclick="hideSidebar()" class="side-links" href="../index.html#expelink">Experience</a>
+        <a onclick="hideSidebar()" class="side-links" href="../projects.html">Projects</a>
+        <a onclick="hideSidebar()" class="side-links" href="../index.html#awalink">Awards</a>
+        <a onclick="hideSidebar()" class="side-links" href="../contact.html">Contact</a>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Project Header -->
+  <header class="project-header" role="banner">
+    <h1>Mars Underground Habitat Module</h1>
+    <p>
+      Conceptual design of a sustainable, modular habitat for Mars colonization, integrating advanced storage, agriculture, laboratory, communication, and health systems.
+    </p>
+  </header>
+
+  <!-- Featured Image -->
+  <img
+    src="../Photos/mars-habitat.jpg"
+    alt="Rendered design of Mars underground habitat module"
+    class="project-featured-image"
+    role="img"
+  />
+
+  <!-- Image Gallery -->
+  <section class="image-gallery" aria-label="Additional images of Mars Underground Habitat Module">
+    <img src="../Photos/mars-habitat-1.jpg" alt="Close-up of habitat entrance design" />
+    <img src="../Photos/mars-habitat-2.jpg" alt="Agricultural module hydroponics design" />
+    <img src="../Photos/mars-habitat-3.jpg" alt="Cross-sectional view of habitat modules" />
+    <img src="../Photos/mars-habitat-4.jpg" alt="3D model showing structural supports" />
+  </section>
+
+  <!-- Project Details -->
+  <main class="project-content" role="main">
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        This project presents a multi-module underground habitat designed for long-term human settlement on Mars. It addresses critical challenges such as radiation protection, resource recycling, and psychological well-being by offering integrated living, agricultural, and laboratory environments.
+      </p>
+    </section>
+
+    <section>
+      <h2>Design Highlights</h2>
+      <ul>
+        <li>Modular construction enabling easy expansion and reconfiguration.</li>
+        <li>Energy-efficient environmental control systems.</li>
+        <li>Advanced hydroponic agriculture module to sustain crew nutrition.</li>
+        <li>Laboratories equipped for scientific experiments and health monitoring.</li>
+        <li>Robust communication systems designed for interplanetary data exchange.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Tools & Skills</h2>
+      <p>
+        The habitat was modeled using SolidWorks CAD, utilizing parametric design principles. Emphasis was placed on manufacturability, structural integrity, and modular adaptability.
+      </p>
+    </section>
+
+    <section>
+      <h2>Project Impact & Future Work</h2>
+      <p>
+        This concept contributes to the field of space habitat design by combining sustainability and functionality. Future work includes simulation of environmental conditions and integration with life support systems.
+      </p>
+    </section>
+
+    <a href="../projects.html" class="back-btn" aria-label="Back to projects page">← Back to Projects</a>
+  </main>
+
+  <script>
+    function showSidebar() {
+      document.querySelector('.sidebar').style.display = 'block';
+    }
+    function hideSidebar() {
+      document.querySelector('.sidebar').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
