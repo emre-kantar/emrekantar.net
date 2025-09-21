@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="/CSS/navbar.css" />
+  <link rel="stylesheet" href="/CSS/footer.css" />
+  <link rel="stylesheet" href="/CSS/individual-project.css">
+  
+  <title>AGROBOT | Emre Kantar</title>
+  
+  
+</head>
+<body>
+
+  <!-- Navbar-->
+  <nav class="navbar" role="navigation" aria-label="Primary navigation">
+    <div class="brand">
+      <img class="hideLogo" src="/photos/ITKMUN PP y.png" alt="Emre Kantar">
+      <h2><a href="index.html">Emre Kantar</a></h2>
+    </div>
+    <div class="links">
+      <div class="nav">
+        <a class="hideOnMobile" href="index.html">About</a>
+        <a class="hideOnMobile" href="projects.html">Projects</a>
+        <a class="hideOnMobile" href="resume.html">Resume</a>
+        <a class="hideOnMobile" href="contact.html">Contact</a>
+      </div>
+      <a onclick="showSidebar()" class="menu-button" href="#" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="28" height="28" fill="#e8eaed" aria-hidden="true"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </a>
+
+      <ul class="sidebar" aria-hidden="true" role="menu">
+        <a onclick="hideSidebar()" class="close-button" href="#" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="28" height="28" fill="#e8eaed" aria-hidden="true"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </a>
+        <img src="/photos/ITKMUN PP y.png" alt="Emre Kantar">
+        <h2>Emre Kantar</h2>
+        <hr>
+        <a onclick="hideSidebar()" class="side-links" href="index.html">About</a>
+        <a onclick="hideSidebar()" class="side-links" href="projects.html">Projects</a>
+        <a onclick="hideSidebar()" class="side-links" href="resume.html">Resume</a>
+        <a onclick="hideSidebar()" class="side-links" href="contact.html">Contact</a>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Project Header -->
+  <header class="project-header" role="banner">
+    <h1>Agricultural Vehicle for Seeding and Irrigation</h1>
+    <p>
+    AGROBOT — an autonomous agricultural vehicle designed to perform seeding and irrigation 
+    with minimal human labor, offering a cost-effective and accessible alternative to 
+    conventional farming machinery.    </p>
+  </header>
+
+  
+
+  <!-- Image Gallery -->
+  <section class="image-gallery" aria-label="Images of AGROBOT">
+    <img src="/Photos/AGROBOT-Images/Emre_Kantar_Tarımbot.jpg" alt="" />
+    <img src="/Photos/AGROBOT-Images/KAPATICI1.PNG" alt="" />
+    <img src="/Photos/AGROBOT-Images/LCD ekran input.jpg" alt="" />
+  </section>
+
+  <!-- Project Details -->
+  <main class="project-content" role="main">
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        AGROBOT was developed to address the growing need for efficiency and automation in agriculture. 
+        Designed to reduce labor requirements and operational costs, it performs both seeding and irrigation in a single pass. 
+        Its compact size and adaptable design make it suitable for small to medium-sized plots, while remaining scalable for larger operations. 
+        The system’s components were custom-designed, 3D printed, and integrated with electronic control systems to ensure functional reliability.      </p>
+    </section>
+
+    <section>
+      <h2>Design Highlights</h2>
+      <ul>
+        <li>• Dual-function capability for seeding and irrigation in one operation.</li>
+        <li>• Custom-designed mechanical components, including digging, seed dispensing, and covering units.</li>
+        <li>• 3D-printed parts for cost efficiency and rapid prototyping.</li>
+        <li>• Modular design for ease of maintenance and future upgrades.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Tools & Skills</h2>
+      <ul>
+        <li>• CAD modeling and mechanical design in SOLIDWORKS for agricultural applications.</li>
+        <li>• Arduino-based control systems and programming.</li>
+        <li>• 3D-printed parts for cost efficiency and rapid prototyping.</li>
+        <li>• Integration of motor drivers, sensors, and solenoid valves for precise operations.</li>
+        <li>• Testing and troubleshooting under varied terrain conditions.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Responsibilites & Contributions</h2>
+      <ul>
+        <li>• Served as team leader, overseeing the project’s development from concept to completion.</li>
+        <li>• Led the design of AGROBOT’s mechanical components, managed full system assembly, and integrated electronic and mechanical subsystems.</li>
+        <li>• Ensured precise fit, reliable operation, and smooth coordination between all parts of the system.</li>
+      </ul>
+      </section>
+
+    <section>
+      <h2>Project Impact</h2>
+      <p>
+        AGROBOT successfully demonstrated the potential of autonomous agricultural machinery to reduce labor requirements, lower costs, and improve operational efficiency. 
+        The project provided valuable experience in mechanical design, electronics integration, and autonomous system control, and serves as a practical example of how affordable technology can support farmers and contribute to modernizing agricultural practices.      </p>
+    
+      </section>
+
+    <section>
+      <h2>Competitions Participated</h2>
+      <ul>
+        <li>• TÜBİTAK 2204-A - High School Students Research Projects Competition</li>
+        <li>• TEKNOFEST Agricultural Technologies Competition</li>
+      </ul>
+    </section>
+
+    <a href="/Site/projects.html" class="back-btn" aria-label="Back to projects page">← Back to Projects</a>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Emre Kantar • All rights reserved</p>
+			<div id="socials-list">
+				<a class="socials" href="https://www.linkedin.com/in/emre-kantar" target="_blank"><img src="/Assets/SVGs/linkedin-svgrepo-com white.svg" alt="LinkedIn" ></a>
+				<a class="socials" href="https://www.fiverr.com/s/dDGm6q2" target="_blank"><img src="/Assets/SVGs/fiverr-svgrepo-com white.svg" alt=""></a>
+				<a class="socials" href="/Site/contact.html"><img src="/Assets/SVGs//gmail-svgrepo-com white.svg" alt=""></a>
+			</div>
+			<p style="margin-top: 1rem;">📍Izmir, Türkiye</p>
+    </div>
+  </footer>
+
+  <script>
+    function showSidebar() {
+      document.querySelector('.sidebar').style.display = 'block';
+    }
+    function hideSidebar() {
+      document.querySelector('.sidebar').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
