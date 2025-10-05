@@ -1307,6 +1307,10 @@ a:focus {
   .skills-section {
     padding: var(--space-2xl) var(--site-padding);
   }
+
+  .skills-section h2 {
+    padding: 0 var(--space-2xl);
+  }
   
   .skills-grid {
     grid-template-columns: 1fr;
@@ -1403,6 +1407,11 @@ a:focus {
   
   .skills-section {
     padding: var(--space-lg) var(--site-padding);
+  }
+
+  .skills-section h2 {
+    flex-direction: column;
+    text-align: center;
   }
   
   .skills-grid {
