@@ -8,10 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
   
+  <link rel="stylesheet" href="CSS/index.css">
+  <link rel="stylesheet" href="CSS/navbar.css">
+  <link rel="stylesheet" href="CSS/footer.css" />
+  <link rel="stylesheet" href="CSS/projects.css">
   
-  <link rel="stylesheet" href="/CSS/navbar.css">
-  <link rel="stylesheet" href="/CSS/footer.css" />
-  <link rel="stylesheet" href="/CSS/projects.css">
+  <!-- Add modern animations and icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <title>Projects - Emre Kantar</title>
   <link class="favicon" rel="shortcut icon" href="Photos/ITKMUN PP Y.png" type="image/x-icon">
@@ -20,106 +24,182 @@
 <body>
 
   <!-- NAVBAR-->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Primary navigation">
     <div class="brand">
-      <img class="hideLogo" src="Photos/ITKMUN PP Y.png" alt="Emre Kantar" />
+      <img class="hideLogo" src="Photos/ITKMUN PP Y.png" alt="Emre Kantar" width="60" height="60">
       <h2><a href="index.html">Emre Kantar</a></h2>
     </div>
+    
     <div class="links">
-      <div class="nav">
-        <a class="hideOnMobile" href="index.html">About</a>
-        <a class="hideOnMobile" href="projects.html">Projects</a>
-        <a class="hideOnMobile" href="resume.html">Resume</a>
-        
-        <a class="hideOnMobile" href="contact.html">Contact</a>
+      <div class="nav" role="menubar">
+        <a class="hideOnMobile" href="index.html" role="menuitem">About</a>
+        <a class="hideOnMobile" href="projects.html" role="menuitem" aria-current="page">Projects</a>
+        <a class="hideOnMobile" href="portfolio.html" role="menuitem">Portfolio</a>
+        <a class="hideOnMobile" href="contact.html" role="menuitem">Contact</a>
       </div>
-      <a onclick="showSidebar()" class="menu-button" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="4vh" fill="#e8eaed">
+      
+      <button onclick="showSidebar()" class="menu-button" aria-label="Open navigation menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="28" height="28" fill="#e8eaed" aria-hidden="true">
           <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
         </svg>
-      </a>
+      </button>
 
-      <ul class="sidebar">
-        <a onclick="hideSidebar()" class="close-button" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" height="6vh" viewBox="0 -960 960 960" width="6vh" fill="#e8eaed">
+      <aside class="sidebar" aria-hidden="true" role="menu">
+        <button onclick="hideSidebar()" class="close-button" aria-label="Close navigation menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="28" height="28" fill="#e8eaed" aria-hidden="true">
             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
           </svg>
-        </a>
-        <img src="Photos/ITKMUN PP Y.png" alt="Emre Kantar" />
-        <h2>Emre Kantar</h2>
-        <hr />
-        <a onclick="hideSidebar()" class="side-links" href="index.html">About</a>
-        <a onclick="hideSidebar()" class="side-links" href="projects.html">Projects</a>
-        <a onclick="hideSidebar()" class="side-links" href="resume.html">Resume</a>
+        </button>
         
-        <a onclick="hideSidebar()" class="side-links" href="contact.html">Contact</a>
-      </ul>
+        <div class="sidebar-header">
+          <img src="Photos/ITKMUN PP Y.png" alt="Emre Kantar" width="120" height="120">
+          <h2>Emre Kantar</h2>
+        </div>
+        
+        <hr>
+        
+        <nav class="sidebar-nav" role="menubar">
+          <a onclick="hideSidebar()" class="side-links" href="index.html" role="menuitem">About</a>
+          <a onclick="hideSidebar()" class="side-links" href="projects.html" role="menuitem" aria-current="page">Projects</a>
+          <a onclick="hideSidebar()" class="side-links" href="portfolio.html" role="menuitem">Portfolio</a>
+          <a onclick="hideSidebar()" class="side-links" href="contact.html" role="menuitem">Contact</a>
+        </nav>
+      </aside>
     </div>
   </nav>
+  <div id="navbar-content"></div>
 
   
 
   <!-- PAGE HEADER -->
-  <section class="projects-container" aria-label="Projects overview">
+  <section class="projects-container animate__animated animate__fadeIn" aria-label="Projects overview">
     <div class="projects-header">
-      <h1>Prominent Projects</h1>
+      <h1><i class="fas fa-rocket"></i> <span>Prominent Projects</span></h1>
       <p>Explore my most significant projects that showcase my skills in mechanical design, electronics, and problem-solving. 
         Each project represents my efforts toward quality, innovation, and practical impact.</p>
     </div>
+
 
     <!-- PROJECTS GRID -->
     <div class="projects-grid">
 
       <!-- Project 1 -->
-      <article class="project-card" tabindex="0">
-        <img src="Photos/ProjectsBanners/EnergyCore.png" alt="" class="project-image" />
+      <article class="project-card animate-on-scroll" data-category="mechanical" tabindex="0">
+        <div class="project-image-container">
+          <img src="Photos/ProjectsBanners/EnergyCore.png" alt="EnergyCore Project" class="project-image" />
+          <div class="project-overlay">
+          </div>
+        </div>
         <div class="project-content">
           <h3 class="project-title">Portable Battery System in Electric Vehicles</h3>
-          <h5 class="project-team">EnergyCore</h5>
+          <h5 class="project-team"><i class="fas fa-users"></i> <span>EnergyCore</span></h5>
           <p class="project-description">
             Designed and developed a portable battery system aimed at extending the driving range of electric vehicles in emergency situations. 
-            The system emphasizes efficient energy delivery, user-friendly operation, and rapid deployment to provide reliable support when vehicle charging is unavailable.</p>
-          <a href="Projects/EnergyCore.html" class="view-btn" aria-label="">View Project</a>
+            The system emphasizes efficient energy delivery, user-friendly operation, and rapid deployment to provide reliable support when vehicle charging is unavailable.
+          </p>
+          <div class="project-tags">
+            <span class="tag mechanical"><i class="fas fa-battery-full"></i> <span>Energy Systems</span></span>
+            <span class="tag mechanical"><i class="fas fa-car"></i> <span>Electric Vehicles</span></span>
+          </div>
+          <div class="project-stats">
+            <div class="stat">
+              <i class="fas fa-calendar"></i>
+              <span>2024-2025</span>
+            </div>
+          </div>
+          <a href="Projects/EnergyCore.html" class="view-btn" aria-label="View EnergyCore Project">
+            <i class="fas fa-external-link-alt"></i> <span>View Project</span>
+          </a>
         </div>
       </article>
 
       <!-- Project 2 -->
-      <article class="project-card" tabindex="0">
-        <img src="Photos/ProjectsBanners/AGROBOT.png" alt="CO2 Adsorbent material made from waste" class="project-image" />
+      <article class="project-card animate-on-scroll" data-category="robotics mechanical" tabindex="0">
+        <div class="project-image-container">
+          <img src="Photos/ProjectsBanners/AGROBOT.png" alt="AGROBOT Project" class="project-image" />
+          <div class="project-overlay">
+          </div>
+        </div>
         <div class="project-content">
-          <h3 class="project-title"> Agricultural Vehicle for Seeding and Irrigation</h3>
-          <h5 class="project-team">AGROBOT</h5>
+          <h3 class="project-title">Agricultural Vehicle for Seeding and Irrigation</h3>
+          <h5 class="project-team"><i class="fas fa-users"></i> <span>AGROBOT</span></h5>
           <p class="project-description">
             Designed and developed a multifunctional agricultural vehicle capable of performing both seeding and irrigation tasks. 
             The project focuses on improving efficiency and precision in farming operations through practical mechanical design and system integration.
           </p>
-          <a href="Projects/AGROBOT.html" class="view-btn" aria-label="">View Project</a>
+          <div class="project-tags">
+            <span class="tag robotics"><i class="fas fa-robot"></i> <span>Autonomous Systems</span></span>
+            <span class="tag mechanical"><i class="fas fa-seedling"></i> <span>Agriculture</span></span>
+          </div>
+          <div class="project-stats">
+            <div class="stat">
+              <i class="fas fa-calendar"></i>
+              <span>2023-2024</span>
+            </div>
+          </div>
+          <a href="Projects/AGROBOT.html" class="view-btn" aria-label="View AGROBOT Project">
+            <i class="fas fa-external-link-alt"></i> <span>View Project</span>
+          </a>
         </div>
       </article>
 
       <!-- Project 3 -->
-      <article class="project-card" tabindex="0">
-        <img src="Photos/ProjectsBanners/Cosmic Acoustics Picture.png" alt="" class="project-image" />
+      <article class="project-card animate-on-scroll" data-category="software" tabindex="0">
+        <div class="project-image-container">
+          <img src="Photos/ProjectsBanners/Cosmic Acoustics Picture.png" alt="Cosmic Acoustics Project" class="project-image" />
+          <div class="project-overlay">
+          </div>
+        </div>
         <div class="project-content"> 
           <h3 class="project-title">Melodic Generation from Galaxy Images</h3>
-          <h5 class="project-team">Cosmic Acoustics</h5>
+          <h5 class="project-team"><i class="fas fa-users"></i> <span>Cosmic Acoustics</span></h5>
           <p class="project-description">
             Developed a software that converts pixel colors and brightness from galaxy images into melodies using the golden ratio and fractal geometry. 
             Combining AI, mathematics, and astronomy, it explores the creative connection between art and science through music.
           </p>
+          <div class="project-tags">
+            <span class="tag software"><i class="fas fa-music"></i> <span>Audio Processing</span></span>
+            <span class="tag software"><i class="fas fa-star"></i> <span>Mathematics</span></span>
+          </div>
+          <div class="project-stats">
+            <div class="stat">
+              <i class="fas fa-calendar"></i>
+              <span>2023-2024</span>
+            </div>
+          </div>
+          <div class="view-btn disabled">
+            <i class="fas fa-lock"></i> <span>Coming Soon</span>
+          </div>
         </div>
       </article>
 
       <!-- Project 4 -->
-      <article class="project-card" tabindex="0">
-        <img src="Photos/ProjectsBanners/FlyThrough_Banner.png" alt="" class="project-image" />
+      <article class="project-card animate-on-scroll" data-category="robotics software" tabindex="0">
+        <div class="project-image-container">
+          <img src="Photos/ProjectsBanners/FlyThrough_Banner.png" alt="FlyThrough Project" class="project-image" />
+          <div class="project-overlay">
+          </div>
+        </div>
         <div class="project-content">
           <h3 class="project-title">Design of an Autonomous Flying Car System</h3>
-          <h5 class="project-team">FlyThrough</h5>
+          <h5 class="project-team"><i class="fas fa-users"></i> <span>FlyThrough</span></h5>
           <p class="project-description">
             Focused on integrating sensor technologies with optimized algorithms and utilizing simulation-based testing to evaluate and improve the performance of an autonomous flying car system. 
             The work aims to enhance reliability, control, and safety for future urban air mobility.
           </p>
+          <div class="project-tags">
+            <span class="tag robotics"><i class="fas fa-plane"></i> <span>Autonomous Flight</span></span>
+            <span class="tag software"><i class="fas fa-microchip"></i> <span>Simulations</span></span>
+          </div>
+          <div class="project-stats">
+            <div class="stat">
+              <i class="fas fa-calendar"></i>
+              <span>2023-2024</span>
+            </div>
+          </div>
+          <div class="view-btn disabled">
+            <i class="fas fa-lock"></i> <span>Coming Soon</span>
+          </div>
         </div>
       </article>
 
@@ -130,9 +210,9 @@
     <div class="container">
       <p>&copy; 2025 Emre Kantar • All rights reserved</p>
 			<div id="socials-list">
-				<a class="socials" href="https://www.linkedin.com/in/emre-kantar" target="_blank"><img src="/Assets/SVGs/linkedin-svgrepo-com white.svg" alt="LinkedIn" ></a>
-				<a class="socials" href="https://www.fiverr.com/s/dDGm6q2" target="_blank"><img src="/Assets/SVGs/fiverr-svgrepo-com white.svg" alt=""></a>
-				<a class="socials" href="contact.html"><img src="/Assets/SVGs//gmail-svgrepo-com white.svg" alt=""></a>
+				<a class="socials" href="https://www.linkedin.com/in/emre-kantar" target="_blank"><img src="Assets/SVGs/linkedin-svgrepo-com white.svg" alt="LinkedIn" ></a>
+				<a class="socials" href="https://www.fiverr.com/s/dDGm6q2" target="_blank"><img src="Assets/SVGs/fiverr-svgrepo-com white.svg" alt=""></a>
+				<a class="socials" href="contact.html"><img src="Assets/SVGs/gmail-svgrepo-com white.svg" alt=""></a>
 			</div>
 			<p style="margin-top: 1rem;">📍Izmir, Türkiye</p>
     </div>
@@ -145,6 +225,34 @@
     function hideSidebar() {
       document.querySelector('.sidebar').style.display = 'none';
     }
+
+
+    // Project Animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const projectCards = document.querySelectorAll('.project-card');
+
+      // Add scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+          }
+        });
+      }, { threshold: 0.05 });
+
+      projectCards.forEach(card => observer.observe(card));
+
+      // Add hover effects to project cards
+      projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.classList.add('animate__animated', 'animate__pulse');
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('animate__pulse');
+        });
+      });
+    });
   </script>
 
 </body>

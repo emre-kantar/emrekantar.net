@@ -8,148 +8,181 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="/CSS/navbar.css" />
-  <link rel="stylesheet" href="/CSS/footer.css" />
-  <link rel="stylesheet" href="/CSS/individual-project.css">
+  <!-- Modern animations and icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <title>EnergyCore | Emre Kantar</title>
+  <link rel="stylesheet" href="../CSS/index.css">
+  <link rel="stylesheet" href="../CSS/navbar.css" />
+  <link rel="stylesheet" href="../CSS/footer.css" />
+  <link rel="stylesheet" href="../CSS/individual-project.css">
+  <link rel="stylesheet" href="../CSS/language-toggle.css">
   
-  
+  <title>EnergyCore - Portable Battery System | Emre Kantar</title>
+  <link class="favicon" rel="shortcut icon" href="../Photos/ITKMUN PP Y.png" type="image/x-icon">
 </head>
 <body>
 
-  <!-- Navbar-->
+  <!-- NAVIGATION -->
   <nav class="navbar" role="navigation" aria-label="Primary navigation">
     <div class="brand">
-      <img class="hideLogo" src="/Photos/ITKMUN PP Y.png" alt="Emre Kantar">
-      <h2><a href="/index.html">Emre Kantar</a></h2>
+      <img class="hideLogo" src="../Photos/ITKMUN PP Y.png" alt="Emre Kantar" width="60" height="60">
+      <h2><a href="../index.html">Emre Kantar</a></h2>
     </div>
+    
     <div class="links">
-      <div class="nav">
-        <a class="hideOnMobile" href="/index.html">About</a>
-        <a class="hideOnMobile" href="/projects.html">Projects</a>
-        <a class="hideOnMobile" href="/resume.html">Resume</a>
-        <a class="hideOnMobile" href="/contact.html">Contact</a>
+      <div class="nav" role="menubar">
+        <a class="hideOnMobile" href="../index.html" role="menuitem">About</a>
+        <a class="hideOnMobile" href="../projects.html" role="menuitem" aria-current="page">Projects</a>
+        <a class="hideOnMobile" href="../portfolio.html" role="menuitem">Portfolio</a>
+        <a class="hideOnMobile" href="../contact.html" role="menuitem">Contact</a>
       </div>
-      <a onclick="showSidebar()" class="menu-button" href="#" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="28" height="28" fill="#e8eaed" aria-hidden="true"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-      </a>
+      
+      <button onclick="showSidebar()" class="menu-button" aria-label="Open navigation menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="28" height="28" fill="#e8eaed" aria-hidden="true">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+        </svg>
+      </button>
 
-      <ul class="sidebar" aria-hidden="true" role="menu">
-        <a onclick="hideSidebar()" class="close-button" href="#" aria-label="Close menu">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="28" height="28" fill="#e8eaed" aria-hidden="true"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-        </a>
-        <img src="/Photos/ITKMUN PP Y.png" alt="Emre Kantar">
-        <h2>Emre Kantar</h2>
+      <aside class="sidebar" aria-hidden="true" role="menu">
+        <button onclick="hideSidebar()" class="close-button" aria-label="Close navigation menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="28" height="28" fill="#e8eaed" aria-hidden="true">
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+          </svg>
+        </button>
+        
+        <div class="sidebar-header">
+          <img src="../Photos/ITKMUN PP Y.png" alt="Emre Kantar" width="120" height="120">
+          <h2>Emre Kantar</h2>
+        </div>
+        
         <hr>
-        <a onclick="hideSidebar()" class="side-links" href="/index.html">About</a>
-        <a onclick="hideSidebar()" class="side-links" href="/projects.html">Projects</a>
-        <a onclick="hideSidebar()" class="side-links" href="/resume.html">Resume</a>
-        <a onclick="hideSidebar()" class="side-links" href="/contact.html">Contact</a>
-      </ul>
+        
+        <nav class="sidebar-nav" role="menubar">
+          <a onclick="hideSidebar()" class="side-links" href="../index.html" role="menuitem">About</a>
+          <a onclick="hideSidebar()" class="side-links" href="../projects.html" role="menuitem" aria-current="page">Projects</a>
+          <a onclick="hideSidebar()" class="side-links" href="../portfolio.html" role="menuitem">Portfolio</a>
+          <a onclick="hideSidebar()" class="side-links" href="../contact.html" role="menuitem">Contact</a>
+        </nav>
+      </aside>
     </div>
   </nav>
 
-  <!-- Project Header -->
-  <header class="project-header" role="banner">
-    <h1>Portable Battery System in Electric Vehicles</h1>
+  <!-- PROJECT HEADER -->
+  <header class="project-header animate__animated animate__fadeIn" role="banner">
+    <h1><i class="fas fa-battery-full" aria-hidden="true"></i> <span>Portable Battery System in Electric Vehicles</span></h1>
     <p>
-    EnergyCore — Combining High-Efficiency Battery Technology with Ergonomic Design to Deliver a Practical, Affordable, and Environmentally Conscious Range Boost.    </p>
+      EnergyCore — Combining High-Efficiency Battery Technology with Ergonomic Design to Deliver a Practical, Affordable, and Environmentally Conscious Range Boost.
+    </p>
   </header>
 
-  
-
-  <!-- Image Gallery -->
-  <section class="image-gallery" aria-label="Images of AGROBOT">
-    <img src="/Photos/EnergyCore-Images/Modül Görsel 1.jpg" alt="" />
-    <img src="/Photos/EnergyCore-Images/Seri Bağlantı Foto-1.png" alt="" />
-    <img src="/Photos/EnergyCore-Images/Ünite Fan Görsel.jpg" alt="" />
+  <!-- IMAGE GALLERY -->
+  <section class="image-gallery animate__animated animate__fadeIn" aria-label="EnergyCore Project Images">
+    <img src="../Photos/EnergyCore-Images/Modül Görsel 1.jpg" alt="EnergyCore battery module design and structure" />
+    <img src="../Photos/EnergyCore-Images/Seri Bağlantı Foto-1.png" alt="EnergyCore series connection and electrical configuration" />
+    <img src="../Photos/EnergyCore-Images/Ünite Fan Görsel.jpg" alt="EnergyCore cooling system and fan unit" />
   </section>
 
-  <!-- Project Details -->
+  <!-- PROJECT DETAILS -->
   <main class="project-content" role="main">
-    <section>
-      <h2>Project Overview</h2>
+    <section class="animate__animated animate__fadeInUp">
+      <h2><i class="fas fa-info-circle" aria-hidden="true"></i> <span>Project Overview</span></h2>
       <p>
-        EnergyCore is a portable battery module <b>prototype</b> developed to address one of the most critical challenges in electric vehicle (EV) adoption: limited range in emergency situations. 
+        EnergyCore is a portable battery module developed to address one of the most critical challenges in electric vehicle (EV) adoption: limited range in emergency situations. 
         Designed to provide an additional 47.8 km of driving distance, the module enables EV users to reach the nearest charging station during long trips or in remote areas. 
-        The system is based on the specifications of the Tesla Model Y, the world’s best-selling EV in 2023, and is optimized for compatibility, performance, and portability.
-        This project was developed within a <b>theoretical framework</b>, serving as a <b>conceptual study</b> rather than a commercially implemented solution.    
+        The system is based on the specifications of the Tesla Model Y, the world's best-selling EV in 2023, and is optimized for compatibility, performance, and portability.
+        This project was developed within a theoretical framework, serving as a conceptual study rather than a commercially implemented solution.
       </p>
     </section>
 
-    <section>
-      <h2>Design Highlights</h2>
+    <section class="animate__animated animate__fadeInUp">
+      <h2><i class="fas fa-cogs" aria-hidden="true"></i> <span>Design Highlights</span></h2>
       <ul>
-        <li>• <strong>Modular Architecture:</strong>  Five removable battery units, each containing 95 series-connected LG Energy Solution 21700 NMC cells.</li>
-        <li>• <strong>Cooling Efficiency:</strong>  Dual 60x60 mm fans per unit for optimal thermal management and extended battery life.</li>
-        <li>• <strong>Compact & Portable:</strong>  Ergonomic retractable handle, 360° rotating wheels, and suitcase-inspired form factor for ease of transport.</li>
-        <li>• <strong>Durable Construction:</strong>  Polypropylene Copolymer (PP-C) housing offering heat resistance, mechanical strength, and environmental protection.</li>
-        <li>• <strong>Quick Operation:</strong>  Full charge in 2 hours and vehicle energy transfer in 40 minutes via CCS Type 2 connector.</li>
+        <li><strong>Modular Architecture:</strong> Five removable battery units, each containing 95 series-connected LG Energy Solution 21700 NMC cells.</li>
+        <li><strong>Cooling Efficiency:</strong> Dual 60x60 mm fans per unit for optimal thermal management and extended battery life.</li>
+        <li><strong>Compact & Portable:</strong> Ergonomic retractable handle, 360° rotating wheels, and suitcase-inspired form factor for ease of transport.</li>
+        <li><strong>Durable Construction:</strong> Polypropylene Copolymer (PP-C) housing offering heat resistance, mechanical strength, and environmental protection.</li>
+        <li><strong>Quick Operation:</strong> Full charge in 2 hours and vehicle energy transfer in 40 minutes via CCS Type 2 connector.</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Technical Tools & Skills</h2>
+    <section class="animate__animated animate__fadeInUp">
+      <h2><i class="fas fa-tools" aria-hidden="true"></i> <span>Technical Tools & Skills</span></h2>
       <ul>
-        <li>• Battery system analysis and capacity calculations.</li>
-        <li>• Comparative analysis of battery chemistries and cell models.</li>
-        <li>• 3D CAD modeling of units, casing, and internal components.</li>
-        <li>• Cost analysis and component sourcing for prototype development.</li>
+        <li>Battery system analysis and capacity calculations</li>
+        <li>Comparative analysis of battery chemistries and cell models</li>
+        <li>3D CAD modeling of units, casing, and internal components</li>
+        <li>Cost analysis and component sourcing for prototype development</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Responsibilites & Contributions</h2>
+    <section class="animate__animated animate__fadeInUp">
+      <h2><i class="fas fa-user-tie" aria-hidden="true"></i> <span>Responsibilities & Contributions</span></h2>
       <ul>
-        <li>• Contributed to the research on battery technologies and EV compatibility.</li>
-        <li>• Performed theoretical calculations for capacity, range, and charging times.</li>
-        <li>• Developed the 3D modeling of specific components within the portable battery system.</li>
+        <li>Contributed to the research on battery technologies and EV compatibility</li>
+        <li>Performed technical calculations for capacity, range, and charging times</li>
+        <li>Developed the 3D modeling of specific components within the portable battery system</li>
       </ul>
-      </section>
+    </section>
 
-    <section>
-      <h2>Project Impact</h2>
+    <section class="animate__animated animate__fadeInUp">
+      <h2><i class="fas fa-chart-line" aria-hidden="true"></i> <span>Project Impact</span></h2>
       <p>
-        EnergyCore provides a practical and affordable approach to addressing EV range limitations.
-        Its design aims to improve accessibility, helping more users feel confident in adopting electric vehicles by reducing concerns about range.
-        The module’s portability and ease of use make it a helpful option for various situations, from extended trips to off-grid support.
-        By combining efficient NMC lithium-ion technology with user-friendly design, EnergyCore contributes to the broader transition toward sustainable transportation while keeping performance and safety in focus.
-      </p>
-    
-      </section>
+        EnergyCore provides a practical and affordable approach to addressing EV range limitations. 
+        Its design aims to improve accessibility, helping more users feel confident in adopting electric vehicles by reducing concerns about range. 
+        The module's portability and ease of use make it a helpful option for various situations, from extended trips to off-grid support. 
+        By combining efficient NMC lithium-ion technology with user-friendly design, EnergyCore contributes to the broader transition toward sustainable transportation while keeping performance and safety in focus.</p>
+    </section>
 
-    <section>
-      <h2>Competitions Participated</h2>
+    <section class="animate__animated animate__fadeInUp">
+      <h2><i class="fas fa-trophy" aria-hidden="true"></i> <span>Competitions Participated</span></h2>
       <ul>
-        <li>• TÜBİTAK 2204-A - High School Students Research Projects Competition</li>
-        <li>• TEKNOFEST Smart Transportation Competition</li>
-        <li>• Samsung Solve For Tomorrow</li>
+        <li>TÜBİTAK 2204-A - High School Students Research Projects Competition</li>
+        <li>TEKNOFEST Smart Transportation Competition</li>
+        <li>Samsung Solve For Tomorrow</li>
       </ul>
     </section>
 
-    <a href="/projects.html" class="back-btn" aria-label="Back to projects page">← Back to Projects</a>
+    <a href="../projects.html" class="back-btn animate__animated animate__fadeIn" aria-label="Back to projects page">
+      <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Projects
+    </a>
   </main>
 
   <footer>
     <div class="container">
       <p>&copy; 2025 Emre Kantar • All rights reserved</p>
-			<div id="socials-list">
-				<a class="socials" href="https://www.linkedin.com/in/emre-kantar" target="_blank"><img src="/Assets/SVGs/linkedin-svgrepo-com white.svg" alt="LinkedIn" ></a>
-				<a class="socials" href="https://www.fiverr.com/s/dDGm6q2" target="_blank"><img src="/Assets/SVGs/fiverr-svgrepo-com white.svg" alt=""></a>
-				<a class="socials" href="/contact.html"><img src="/Assets/SVGs//gmail-svgrepo-com white.svg" alt=""></a>
-			</div>
-			<p style="margin-top: 1rem;">📍Izmir, Türkiye</p>
+      <div id="socials-list">
+        <a class="socials" href="https://www.linkedin.com/in/emre-kantar" target="_blank"><img src="../Assets/SVGs/linkedin-svgrepo-com white.svg" alt="LinkedIn"></a>
+        <a class="socials" href="https://www.fiverr.com/s/dDGm6q2" target="_blank"><img src="../Assets/SVGs/fiverr-svgrepo-com white.svg" alt="Fiverr"></a>
+        <a class="socials" href="../contact.html"><img src="../Assets/SVGs/gmail-svgrepo-com white.svg" alt="Contact"></a>
+      </div>
+      <p style="margin-top: 1rem;">📍Izmir, Türkiye</p>
     </div>
   </footer>
 
+  <script src="../JS/translations.js"></script>
   <script>
     function showSidebar() {
-      document.querySelector('.sidebar').style.display = 'block';
+      document.querySelector('.sidebar').style.display = 'flex';
     }
     function hideSidebar() {
       document.querySelector('.sidebar').style.display = 'none';
     }
+
+    // Enhanced animations on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+      });
+    });
   </script>
 </body>
 </html>

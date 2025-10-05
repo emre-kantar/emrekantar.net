@@ -9,9 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
 
   
-  <link rel="stylesheet" href="/CSS/navbar.css">
-  <link rel="stylesheet" href="/CSS/footer.css" />
-  <link rel="stylesheet" href="/CSS/blog.css">
+  <link rel="stylesheet" href="CSS/navbar.css">
+  <link rel="stylesheet" href="CSS/footer.css" />
+  <link rel="stylesheet" href="CSS/blog.css">
+  <link rel="stylesheet" href="CSS/language-toggle.css">
 
   <title>Blog - Emre Kantar</title>
   <link class="favicon" rel="shortcut icon" href="Photos/ITKMUN PP Y.png" type="image/x-icon">
@@ -30,7 +31,7 @@
       <div class="nav">
         <a class="hideOnMobile" href="index.html">About</a>
         <a class="hideOnMobile" href="projects.html">Projects</a>
-        <a class="hideOnMobile" href="resume.html">Resume</a>
+        <a class="hideOnMobile" href="resume.html">Portfolio</a>
         
         <a class="hideOnMobile" href="contact.html">Contact</a>
       </div>
@@ -48,12 +49,12 @@
             />
           </svg>
         </a>
-        <img src="Photos/ITKMUN PP Y.png" alt="Emre Kantar" />
+        <img src="Photos/PP v2 Yakın.png" alt="Emre Kantar" />
         <h2>Emre Kantar</h2>
         <hr />
         <a onclick="hideSidebar()" class="side-links" href="index.html">About</a>
         <a onclick="hideSidebar()" class="side-links" href="projects.html">Projects</a>
-        <a onclick="hideSidebar()" class="side-links" href="resume.html">Resume</a>
+        <a onclick="hideSidebar()" class="side-links" href="resume.html">Portfolio</a>
         
         <a onclick="hideSidebar()" class="side-links" href="contact.html">Contact</a>
       </ul>
@@ -109,12 +110,13 @@
 			<div id="socials-list">
 				<a class="socials" href="https://www.linkedin.com/in/emre-kantar" target="_blank"><img src="/Assets/SVGs/linkedin-svgrepo-com white.svg" alt="LinkedIn" ></a>
 				<a class="socials" href="https://www.fiverr.com/s/dDGm6q2" target="_blank"><img src="/Assets/SVGs/fiverr-svgrepo-com white.svg" alt=""></a>
-				<a class="socials" href="contact.html"><img src="/Assets/SVGs//gmail-svgrepo-com white.svg" alt=""></a>
+				<a class="socials" href="/Site/contact.html"><img src="/Assets/SVGs//gmail-svgrepo-com white.svg" alt=""></a>
 			</div>
 			<p style="margin-top: 1rem;">📍Izmir, Türkiye</p>
     </div>
   </footer>
 
+  <script src="JS/translations.js"></script>
   <script>
     function showSidebar() {
       document.querySelector('.sidebar').style.display = 'flex';

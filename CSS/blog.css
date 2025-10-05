@@ -17,7 +17,7 @@
 }
 
 body{
-  background-image: url(/Photos/BG2.png);
+  background-image: url(../Photos/BG2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
