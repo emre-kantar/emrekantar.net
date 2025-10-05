@@ -1315,6 +1315,7 @@ a:focus {
   .skills-grid {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
+    padding: 0 var(--space-2xl);
   }
   
   .skill-card {
