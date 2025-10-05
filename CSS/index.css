@@ -758,8 +758,8 @@ a:focus {
 /* Animation classes */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
 }
 
 .animate-on-scroll.animated {
@@ -1154,8 +1154,8 @@ a:focus {
 
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
 }
 
 .animate-on-scroll.animate__animated {
