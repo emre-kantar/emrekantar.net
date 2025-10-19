@@ -432,13 +432,14 @@ body {
   font-size: 0.9rem;
   background: rgba(255, 102, 0, 0.1);
   padding: var(--space-xs) var(--space-sm);
+  margin-bottom: var(--space-sm);
   border-radius: 20px;
 }
 
 .experience-role {
   font-weight: var(--font-weight-medium);
   color: var(--gray-700);
-  margin-bottom: var(--space-sm);
+  
 }
 
 .experience-description {
