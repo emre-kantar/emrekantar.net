@@ -427,7 +427,7 @@ body {
 }
 
 .experience-period {
-  color: var(--primary);
+  /*color: var(--primary);*/
   font-weight: var(--font-weight-medium);
   font-size: 0.9rem;
   /*background: rgba(255, 102, 0, 0.1);*/
