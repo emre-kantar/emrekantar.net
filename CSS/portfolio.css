@@ -439,6 +439,7 @@ body {
 .experience-role {
   font-weight: var(--font-weight-medium);
   color: var(--gray-700);
+  margin: 0;
   
 }
 
