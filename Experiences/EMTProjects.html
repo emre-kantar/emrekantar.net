@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMT Projects | Emre Kantar</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#F5F1E8',
+                        card: '#FAF8F4',
+                        textPrimary: '#2F2F2F',
+                        textSecondary: '#6A6A6A',
+                        accent: '#6B7A58',
+                        borderLight: '#D8D2C5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .metric-divider { position: relative; }
+        .metric-divider:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 15%;
+            height: 70%;
+            width: 1px;
+            background-color: #D8D2C5;
+        }
+        @media (max-width: 768px) {
+            .metric-divider:not(:last-child)::after { display: none; }
+            .metric-divider:not(:last-child) { border-bottom: 1px solid #D8D2C5; padding-bottom: 1rem; margin-bottom: 1rem; }
+        }
+    </style>
+</head>
+<body class="bg-background text-textPrimary font-sans antialiased overflow-x-hidden relative">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 bg-background/90 backdrop-blur-lg border-b border-borderLight transition-all shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 md:py-5 flex justify-between items-center">
+            <!-- Emre Kantar Logo (Her ekranda görünür) -->
+<a href="index.html" class="font-serif font-bold text-2xl tracking-tight text-accentDark">
+    Emre Kantar
+</a>
+
+<!-- Mobil Back Butonu (Sadece mobilde sağda görünür) -->
+<a href="/index.html#emt-projects" class="md:hidden flex items-center gap-1 text-text hover:text-accent transition-colors font-semibold text-sm">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+    Back
+</a>
+
+<!-- Desktop Menü Linkleri (Sadece bilgisayarda görünür) -->
+<div class="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-widest uppercase text-textLight">
+    <a href="/index.html#experience" class="flex items-center gap-2 text-text hover:text-accent transition-colors group mr-2">
+        <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        Back
+    </a>
+    <span class="w-px h-4 bg-surfaceDark"></span>
+    <a href="/index.html" class="hover:text-accent transition-colors">Home</a>
+    <a href="/index.html#projects" class="hover:text-accent transition-colors">Projects</a>
+    <a href="/index.html#experience" class="text-accent transition-colors">Experience</a>
+    <a href="/journey.html" class="hover:text-accent transition-colors">My Journey</a>
+</div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <nav class="fixed left-4 xl:left-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col items-center py-6 px-3 bg-card/80 backdrop-blur-md rounded-full shadow-lg border border-borderLight">
+        <div class="absolute left-1/2 transform -translate-x-1/2 top-10 bottom-10 w-px bg-borderLight z-0"></div>
+        
+        <a href="#hero" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-borderLight bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accent"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Overview</span>
+
+        </a>
+        <a href="#beginning" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-borderLight bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accent"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">The Reason</span>
+        </a>
+        <a href="#curriculum" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-borderLight bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accent"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Curriculum</span>
+        </a>
+        <a href="#leadership" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-borderLight bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accent"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Leadership</span>
+        </a>
+        <a href="#takeaways" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-borderLight bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accent"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Takeaways</span>
+        </a>
+    </nav>
+
+    <!-- 1. Hero Section (Includes Image 1) -->
+    <header id="hero" class="pt-32 pb-16 md:pt-40 md:pb-20 px-6 max-w-7xl mx-auto flex flex-col items-center relative z-10">
+        <div class="w-full text-center max-w-4xl mx-auto animate-fade-in">
+            <p class="text-accent font-bold tracking-widest text-xs sm:text-sm uppercase mb-4">Student Engineering Community</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6 text-textPrimary">
+                EMT Projects
+            </h1>
+            <p class="text-sm font-semibold tracking-widest text-textSecondary uppercase mb-8">
+                Electronics<span class="lowercase tracking-normal"></span> &middot; 
+                Mechanics<span class="lowercase tracking-normal"></span> &middot; 
+                Technology<span class="lowercase tracking-normal"></span>
+            </p>
+            
+            <p class="text-xl md:text-3xl font-serif italic text-textPrimary mb-6">
+                "Curious to Learn. Determined to Build."
+            </p>
+            <p class="text-base md:text-lg text-textSecondary max-w-2xl mx-auto mb-12 leading-relaxed">
+                Founded in 2024 to spread basic engineering knowledge, making technical skills accessible through peer-to-peer education in my school.
+            </p>
+            
+            <div class="inline-flex items-center gap-2 bg-card border border-borderLight px-6 py-2 rounded-full mb-16 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                <span class="text-sm font-semibold text-textPrimary">Founder & Community Lead, CAD Instructor</span>
+            </div>
+        </div>
+
+        <!-- Metric Bar -->
+        <div class="w-full max-w-5xl mx-auto bg-card border border-borderLight rounded-2xl p-8 mb-16 shadow-sm animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="grid grid-cols-1 md:grid-cols-4 text-center">
+                <div class="metric-divider">
+                    <p class="text-4xl font-serif font-bold text-accent mb-2">50+</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-textSecondary">Students Reached</p>
+                </div>
+                <div class="metric-divider">
+                    <p class="text-4xl font-serif font-bold text-accent mb-2">30+</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-textSecondary">Hours of Training</p>
+                </div>
+                <div class="metric-divider">
+                    <p class="text-4xl font-serif font-bold text-accent mb-2">24+</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-textSecondary">Lectures Delivered</p>
+                </div>
+                <div class="metric-divider">
+                    <p class="text-4xl font-serif font-bold text-accent mb-2">2</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-textSecondary">Academic Years</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMAGE 1: Teaching/Hero Image -->
+        <div class="w-full max-w-5xl mx-auto h-[400px] md:h-[500px] rounded-2xl overflow-hidden border border-borderLight shadow-lg bg-borderLight animate-fade-in" style="animation-delay: 0.2s;">
+            <img src="/Images/Experiences/EMTProjects/ExperienceEMTProjects-HeroBlurred.png" alt="Emre teaching a class of engineering students" class="w-full h-full object-cover zoomable cursor-pointer">
+            
+        </div>
+    </header>
+
+    <!-- 2. The Beginning: Why I Founded EMT Projects -->
+    <section id="beginning" class="py-24 px-6 max-w-7xl mx-auto lg:pl-16 border-t border-borderLight">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h4 class="text-accent font-bold tracking-widest text-xs uppercase mb-3">The Problem Space</h4>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-textPrimary mb-8">Why I Founded EMT Projects</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div class="bg-card p-10 rounded-2xl border border-borderLight relative">
+                <div class="absolute -top-5 left-10 text-6xl text-accent/20 font-serif">"</div>
+                <h3 class="font-serif text-2xl font-bold mb-4 text-textPrimary relative z-10">The Challenge of Isolation</h3>
+                <p class="text-textSecondary leading-relaxed relative z-10">
+                    During my early engineering journey, I realized a harsh truth: learning technical skills independently is incredibly difficult. Without a mentor or a peer group, getting stuck on a simple Arduino syntax error or a CAD constraint can stop progress for days, draining motivation.
+                </p>
+            </div>
+            
+            <div class="bg-card p-10 rounded-2xl border border-borderLight relative">
+                <div class="absolute -top-5 left-10 text-6xl text-accent/20 font-serif">"</div>
+                <h3 class="font-serif text-2xl font-bold mb-4 text-textPrimary relative z-10">The Power of Community</h3>
+                <p class="text-textSecondary leading-relaxed relative z-10">
+                    My perspective shifted entirely when I became part of communities like CicekliAI. I experienced the power of collaborative learning and peer support. I realized that sharing knowledge does not just help others; it solidifies your own understanding.
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto mt-16 text-center">
+            <p class="text-xl md:text-3x2 font-light leading-relaxed text-textPrimary">
+                I founded EMT Projects to build that exact environment for basic engineering. <br>
+                <span class="font-semibold text-accent">My goal was to teach the knowledge I had gained, helping students build confidence alongside practical skills.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. What We Teach (No Image, heavily stylized layout) -->
+    <section id="curriculum" class="py-24 px-6 max-w-7xl mx-auto lg:pl-16 border-t border-borderLight bg-card/30">
+        <div class="max-w-3xl mb-16">
+            <h4 class="text-accent font-bold tracking-widest text-xs uppercase mb-3">The Architecture of Learning</h4>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-textPrimary mb-6">Designing the Curriculum</h2>
+            <p class="text-lg text-textSecondary leading-relaxed">
+                Rather than random workshops, we structured a comprehensive curriculum designed to take students from abstract concepts to physical creation. The syllabus was divided into two core pillars of modern engineering.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Pillar 1: CAD -->
+            <div class="bg-card border border-borderLight p-10 rounded-2xl hover:shadow-md transition-shadow group">
+                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-8 border border-accent/20 group-hover:bg-accent transition-colors">
+                    <!-- Pen/Design Icon -->
+                    <svg class="w-6 h-6 text-accent group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-textPrimary mb-6">Computer-Aided Design (CAD)</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Introduction to Design Principles</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>2D Sketching & Constraints</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>3D Modeling Techniques</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Assembly Module & Mechanisms</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Technical Drawing & Documentation</li>
+                </ul>
+            </div>
+
+            <!-- Pillar 2: Electronics & Coding -->
+            <div class="bg-card border border-borderLight p-10 rounded-2xl hover:shadow-md transition-shadow group">
+                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-8 border border-accent/20 group-hover:bg-accent transition-colors">
+                    <!-- Chip/Code Icon -->
+                    <svg class="w-6 h-6 text-accent group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-textPrimary mb-6">Electronics <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Coding</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Introduction to Electronics</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Arduino Fundamentals & Programming</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Sensor Integration & Motor Systems</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Data Communication & IoT Basics</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Robotic Control Systems</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>LCD Displays & Data Output</li>
+                    <li class="flex items-center text-textSecondary"><span class="w-1.5 h-1.5 bg-accent rounded-full mr-3"></span>Python Programming Basics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Building a Community (Includes Image 2) -->
+    <section id="leadership" class="py-24 px-6 max-w-7xl mx-auto lg:pl-16 border-t border-borderLight">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            
+            <div class="w-full lg:w-1/2 space-y-8">
+                <div>
+                    <h4 class="text-accent font-bold tracking-widest text-xs uppercase mb-3">Behind the Scenes</h4>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-textPrimary mb-6">Organizing <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Leading</h2>
+                    <p class="text-lg text-textSecondary leading-relaxed mb-6">
+                        Running EMT Projects was fundamentally a management and leadership challenge. Teaching the curriculum was only the final step of a much deeper operational process.
+                    </p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="pl-5 border-l-2 border-accent">
+                        <h3 class="font-serif text-xl font-bold text-textPrimary mb-2">Curriculum <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Material Preparation</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">Simplifying complex engineering concepts into digestible, chronological  lesson plans required deep understanding of the subject matter.</p>
+                    </div>
+                    <div class="pl-5 border-l-2 border-accent">
+                        <h3 class="font-serif text-xl font-bold text-textPrimary mb-2">Team <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Communication Management</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">Coordinating operations meant setting schedules, reserving spaces, maintaining continuous communication with community members, and ensuring everyone was aligned and informed.</p>
+                    </div>
+                    <div class="pl-5 border-l-2 border-accent">
+                        <h3 class="font-serif text-xl font-bold text-textPrimary mb-2">Adaptive Delivery <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Mentorship</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">Standing in front of a classroom forces you to adapt. I learned to read the room, adjust my pacing, and transition from a "lecturer" to a mentor who guides students through their own hands-on project development.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMAGE 2: Workshop Prep / Leadership -->
+            <div class="w-full lg:w-1/2">
+                <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-borderLight shadow-xl bg-card p-2">
+                    <img src="/Images/Experiences/EMTProjects/ExperienceEMTProjects-Curriculum.png" alt="Organizing curriculum and leading a team discussion" class="w-full h-full object-cover rounded-xl zoomable cursor-pointer">
+                    <div class="absolute bottom-6 left-6 right-6 bg-background/95 backdrop-blur-sm p-4 rounded-lg border border-borderLight">
+                        <p class="text-xs font-bold uppercase tracking-widest text-accent mb-1">Operational Reality</p>
+                        <p class="text-sm text-textPrimary font-medium">True impact happens in the preparation hours before the lecture begins.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Key Takeaways -->
+    <section id="takeaways" class="py-24 px-6 max-w-7xl mx-auto lg:pl-16 border-t border-borderLight">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h4 class="text-accent font-bold tracking-widest text-xs uppercase mb-3">The Growth</h4>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-textPrimary mb-6">Key Takeaways</h2>
+            <p class="text-textSecondary text-lg">How leading EMT Projects shaped me as an engineer and an individual.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <!-- Takeaway 1 -->
+            <div class="bg-card border border-borderLight p-8 rounded-xl flex items-start gap-4 hover:border-accent transition-colors">
+                <div class="mt-1 text-accent">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-textPrimary mb-2">Leadership <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Initiative</h3>
+                    <p class="text-sm text-textSecondary leading-relaxed">Moving from a passive learner to an active creator. I learned how to build something from nothing and rally others around a shared vision.</p>
+                </div>
+            </div>
+
+            <!-- Takeaway 2 -->
+            <div class="bg-card border border-borderLight p-8 rounded-xl flex items-start gap-4 hover:border-accent transition-colors">
+                <div class="mt-1 text-accent">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-textPrimary mb-2">Effective Communication</h3>
+                    <p class="text-sm text-textSecondary leading-relaxed">Mastering the ability to explain complex technical concepts simply. If you cannot explain a design to a beginner, you do not truly understand it.</p>
+                </div>
+            </div>
+
+            <!-- Takeaway 3 -->
+            <div class="bg-card border border-borderLight p-8 rounded-xl flex items-start gap-4 hover:border-accent transition-colors">
+                <div class="mt-1 text-accent">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-textPrimary mb-2">STEM Mentoring <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Teaching</h3>
+                    <p class="text-sm text-textSecondary leading-relaxed">Developing patience, empathy, and diagnostic skills to help peers overcome technical roadblocks without simply giving them the answer.</p>
+                </div>
+            </div>
+
+            <!-- Takeaway 4 -->
+            <div class="bg-card border border-borderLight p-8 rounded-xl flex items-start gap-4 hover:border-accent transition-colors">
+                <div class="mt-1 text-accent">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-textPrimary mb-2">Project Management</h3>
+                    <p class="text-sm text-textSecondary leading-relaxed">Executing a 2-year initiative required strict time management, resource allocation, and maintaining momentum across long academic semesters.</p>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="mt-20 max-w-4xl mx-auto text-center border-t border-borderLight pt-12">
+            <p class="font-serif text-2xl md:text-3xl text-textPrimary italic">
+                "Engineering is not just about building functional systems; it is also about supporting the people who build them."
+            </p>
+        </div>-->
+    </section>
+
+    <!-- 6. Final CTA -->
+    <!--<section class="py-24 px-6 flex items-center justify-center border-t border-borderLight bg-card/50">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-textPrimary">Interested in learning more about EMT Projects?</h2>
+            <p class="text-lg text-textSecondary mb-10 leading-relaxed">
+                Explore our activities, educational initiatives, and the broader impact our community is making in student engineering.
+            </p>
+            <a href="#" class="inline-block bg-textPrimary text-background px-10 py-4 rounded-lg font-bold tracking-wide hover:bg-accent transition-all shadow-md hover:-translate-y-1">
+                Visit EMT Projects &rarr;
+            </a>
+        </div>
+    </section>-->
+
+    <!-- Footer -->
+    <footer class="bg-textPrimary text-background py-12 px-6 text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 lg:pl-16">
+            <div class="text-center md:text-left">
+                <p class="font-serif text-2xl font-bold mb-1">Emre Kantar</p>
+                <p class="text-background/50 text-xs mt-1">&copy; 2026 Emre Kantar. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6 text-sm font-semibold tracking-widest uppercase text-background/80">
+                <a href="https://linkedin.com/in/emre-kantar" target="_blank" class="hover:text-accent transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+   <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/90 items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300 opacity-0">
+    <button id="closeModal" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors focus:outline-none">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <img id="modalImage" src="" alt="Enlarged view" class="w-[95vw] md:w-[80vw] h-[90vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+</div>
+
+    <!-- Scripts -->
+    <script>
+        // Sidebar Scrollspy Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('header[id], section[id]');
+            const dots = document.querySelectorAll('nav.fixed.left-4 a');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-30% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        dots.forEach(dot => {
+                            const innerSpan = dot.querySelector('span:first-child');
+                            if (dot.getAttribute('href') === `#${id}`) {
+                                innerSpan.classList.remove('bg-background', 'border-borderLight');
+                                innerSpan.classList.add('bg-accent', 'border-accent', 'scale-125', 'shadow-sm');
+                            } else {
+                                innerSpan.classList.add('bg-background', 'border-borderLight');
+                                innerSpan.classList.remove('bg-accent', 'border-accent', 'scale-125', 'shadow-sm');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        });
+
+        // Image Zoom (Görsel Büyütme) Logic
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const closeBtn = document.getElementById('closeModal');
+const zoomableImages = document.querySelectorAll('.zoomable');
+
+// Görseli Açma Fonksiyonu
+function openModal(src) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    
+    // Animasyon için çok kısa bir gecikme
+    setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalImg.classList.remove('scale-95');
+        modalImg.classList.add('scale-100');
+    }, 10);
+    
+    modalImg.src = src;
+    document.body.style.overflow = 'hidden'; // Arka plan kaymasını engelle
+}
+
+// Görseli Kapatma Fonksiyonu
+function closeModal() {
+    modal.classList.add('opacity-0');
+    modalImg.classList.remove('scale-100');
+    modalImg.classList.add('scale-95');
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto'; // Arka plan kaymasını geri aç
+    }, 300); // Animasyon süresi kadar bekle
+}
+
+// Tüm "zoomable" resimlere tıklama özelliği ekle
+zoomableImages.forEach(img => {
+    img.addEventListener('click', function() {
+        openModal(this.src);
+    });
+});
+
+// X butonuna veya arka planın herhangi bir yerine tıklayınca kapat
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal(); 
+});
+
+// ESC tuşuna basınca kapatma özelliği (Ekstra Kullanıcı Deneyimi)
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape" && !modal.classList.contains('hidden')) {
+        closeModal();
+    }
+});
+    </script>
+</body>
+</html>
