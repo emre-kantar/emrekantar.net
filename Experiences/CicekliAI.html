@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CicekliAI | Emre Kantar</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#F5F1E8',
+                        card: '#FAF8F4',
+                        textPrimary: '#2F2F2F',
+                        textSecondary: '#6A6A6A',
+                        accent: '#6B7A58',
+                        borderLight: '#D8D2C5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* Timeline specific styles */
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #FAF8F4;
+            border: 3px solid #6B7A58;
+            box-shadow: 0 0 0 4px #F5F1E8;
+        }
+        @media (max-width: 768px) {
+            .timeline-dot::before { left: -25px; }
+        }
+    </style>
+</head>
+<body class="bg-background text-textPrimary font-sans antialiased overflow-x-hidden relative">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 bg-background/90 backdrop-blur-lg border-b border-borderLight transition-all shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 md:py-5 flex justify-between items-center">
+            <!-- Emre Kantar Logo (Her ekranda görünür) -->
+<a href="index.html" class="font-serif font-bold text-2xl tracking-tight text-accentDark">
+    Emre Kantar
+</a>
+
+<!-- Mobil Back Butonu (Sadece mobilde sağda görünür) -->
+<a href="../index.html#cicekliai" class="md:hidden flex items-center gap-1 text-text hover:text-accent transition-colors font-semibold text-sm">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+    Back
+</a>
+
+<!-- Desktop Menü Linkleri (Sadece bilgisayarda görünür) -->
+<div class="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-widest uppercase text-textLight">
+    <a href="../index.html#johnson-electric" class="flex items-center gap-2 text-text hover:text-accent transition-colors group mr-2">
+        <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        Back
+    </a>
+    <span class="w-px h-4 bg-surfaceDark"></span>
+    <a href="../index.html" class="hover:text-accent transition-colors">Home</a>
+    <a href="../index.html#projects" class="hover:text-accent transition-colors">Projects</a>
+    <a href="../index.html#experience" class="text-accent transition-colors">Experience</a>
+    <a href="../journey.html" class="hover:text-accent transition-colors">My Journey</a>
+</div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <nav class="fixed left-4 xl:left-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col items-center py-6 px-3 bg-card/80 backdrop-blur-md rounded-full shadow-lg border border-borderLight">
+        <div class="absolute left-1/2 transform -translate-x-1/2 top-10 bottom-10 w-px bg-borderLight z-0"></div>
+        
+        <a href="#hero" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-borderLight bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accent"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Overview</span>
+
+        </a>
+        <a href="#journey" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-borderLight bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accent"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">My Progress</span>
+        </a>
+        <a href="#devfest" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-borderLight bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accent"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">DevFest'25</span>
+        </a>
+        <a href="#takeaways" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-borderLight bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accent"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Takeaways</span>
+        </a>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <header id="hero" class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-7xl mx-auto flex flex-col items-center relative z-10 border-b border-borderLight">
+        
+        <!-- Logo Placeholder -->
+        <div class="w-24 h-24 md:w-32 md:h-32 mb-10 mx-auto rounded-2xl bg-black border border-borderLight flex items-center justify-center shadow-sm animate-fade-in">
+            <img src="../images/experiences/cicekliai/experiencecicekliai-logo.png" alt="AI Research Content Example" class="w-full h-full object-cover rounded-lg opacity-90">
+        </div>
+
+        <div class="w-full text-center max-w-4xl mx-auto animate-fade-in" style="animation-delay: 0.1s;">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-8 text-textPrimary">
+                CicekliAI
+            </h1>
+            <p class="text-accent font-bold tracking-widest text-xs sm:text-sm uppercase mb-4">Cicekli Artificial Intelligence Community</p>
+            <!--<p class="text-xl md:text-2xl font-serif italic text-textPrimary mb-8">
+                Translating Complex Intelligence into Accessible Knowledge.
+            </p>-->
+            <p class="text-base md:text-lg text-textSecondary max-w-2xl mx-auto mb-12 leading-relaxed">
+                A student community founded in 2023 to create educational content, organize learning opportunities, and participate in competitions related to artificial intelligence.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-card border border-borderLight px-6 py-2 rounded-full shadow-sm">
+                    <span class="text-sm font-semibold text-textPrimary">AI Research Team Manager</span>
+                </div>
+                <div class="bg-card border border-borderLight px-6 py-2 rounded-full shadow-sm opacity-70">
+                    <span class="text-sm font-semibold text-textPrimary">Former Media Team Manager</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. The Journey (Timeline) -->
+    <section id="journey" class="py-24 px-6 max-w-5xl mx-auto lg:pl-16">
+        <div class="mb-16 md:text-center">
+            <h4 class="text-accent font-bold tracking-widest text-xs uppercase mb-3">Evolution of a Role</h4>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-textPrimary mb-6">From Audience to Author</h2>
+            <p class="text-lg text-textSecondary leading-relaxed max-w-2xl mx-auto">
+                I initially joined CicekliAI simply to learn. I sat in the audience, attending training sessions to understand the fundamentals of artificial intelligence. But I soon realized that the deepest form of learning comes from synthesizing and sharing knowledge with others.
+            </p>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="relative border-l-2 border-borderLight ml-4 md:ml-8 pl-6 md:pl-10 space-y-16">
+            
+            <!-- Timeline Item 1: Media Team Manager -->
+            <div class="relative timeline-dot">
+                <span class="text-xs font-bold tracking-widest text-textSecondary uppercase mb-2 block">Dec 2023 – Sep 2025</span>
+                <h3 class="font-serif text-3xl font-bold text-textPrimary mb-4">Media Team Manager</h3>
+                <div class="bg-card border border-borderLight p-8 rounded-2xl shadow-sm">
+                    <p class="text-textSecondary leading-relaxed mb-6">
+                        My transition into leadership began with communication. Managing the media team required me to translate the community's highly technical activities into engaging, social media content. 
+                    </p>
+                    <ul class="space-y-3 text-sm text-textSecondary">
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3 mt-1 font-bold"></span>
+                            <span>Directed the community's social media strategy and brand presence.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3 mt-1 font-bold"></span>
+                            <span>Promoted community initiatives, workshops, and competition milestones to drive engagement.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2: AI Research Team Manager -->
+            <div class="relative timeline-dot">
+                <span class="text-xs font-bold tracking-widest text-accent uppercase mb-2 block">Sep 2025 – July 2026</span>
+                <h3 class="font-serif text-3xl font-bold text-textPrimary mb-4">AI Research Team Manager</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                    <div class="md:col-span-3 bg-card border border-borderLight p-8 rounded-2xl shadow-sm">
+                        <p class="text-textSecondary leading-relaxed mb-6">
+                            As the AI environment exploded with new models and breakthroughs, the community needed a dedicated structure to keep pace. I stepped up to lead the AI Research Team. My role shifted from communication to continuous research.
+                        </p>
+                        <p class="text-textSecondary leading-relaxed mb-6">
+                            I was responsible for monitoring global AI developments, analyzing emerging technologies, and distilling that research into weekly content.
+                        </p>
+                        
+                        <!-- Metric Card -->
+                        <div class="bg-background border border-accent/30 p-5 rounded-xl border-l-4 border-l-accent flex items-center gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-textSecondary font-medium">Consistency & Output</p>
+                                <p class="text-lg font-bold text-textPrimary">Produced weekly research content for 7 consecutive months.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post Placeholder Image -->
+                    <div class="md:col-span-2 relative group">
+                        <div class="absolute inset-0 bg-accent/5 rounded-2xl transform rotate-3 transition-transform group-hover:rotate-6"></div>
+                        <div class="relative bg-card border border-borderLight h-full rounded-2xl overflow-hidden flex flex-col shadow-sm">
+                            <div class="h-10 border-b border-borderLight flex items-center px-4 gap-2 bg-background">
+                                <div class="w-3 h-3 rounded-full bg-borderLight"></div>
+                                <div class="w-3 h-3 rounded-full bg-borderLight"></div>
+                                <div class="w-3 h-3 rounded-full bg-borderLight"></div>
+                            </div>
+                            <div class="p-4 flex-grow flex items-center justify-center bg-surface">
+                                <img src="../images/experiences/cicekliai/experiencecicekliai-airadarweekly.png" alt="AI Research Content Example" class="w-full h-full object-cover rounded-lg opacity-90 zoomable cursor-pointer">
+                            </div>
+                            <div class="p-4 bg-background border-t border-borderLight">
+                                <p class="text-xs font-bold text-textSecondary uppercase tracking-widest mb-1">AI Radar Weekly</p>
+                                <p class="text-sm font-serif font-bold text-textPrimary truncate">22-28 February 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 3. Google DevFest'25 Experience -->
+    <section id="devfest" class="py-24 px-6 border-y border-borderLight bg-card/30">
+        <div class="max-w-7xl mx-auto lg:pl-16 flex flex-col md:flex-row gap-16 items-center">
+            
+            <div class="w-full md:w-5/12">
+                <h4 class="text-accent font-bold tracking-widest text-xs uppercase mb-3">Community Outreach</h4>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-textPrimary mb-6">Stepping Out of the Classroom: Google DevFest'25</h2>
+                <div class="space-y-6 text-textSecondary leading-relaxed text-lg font-light">
+                    <p>
+                        A community thrives when it connects with the outside world. Through CicekliAI, we had the incredible opportunity to participate in Google DevFest'25, setting up a booth to represent our community's work.
+                    </p>
+                    <p>
+                        This was not just about showcasing what we did; it was a crash course in networking. I had the chance to interact directly with software engineers, industry professionals, and technology enthusiasts.
+                    </p>
+                    
+                </div>
+            </div>
+
+            <!-- Masonry-style Grid for DevFest Images -->
+            <div class="w-full md:w-7/12 grid grid-cols-2 gap-4 h-[500px]">
+                <div class="col-span-1 row-span-2 rounded-2xl overflow-hidden border border-borderLight shadow-sm hover:shadow-md transition-shadow relative group">
+                    <img src="../images/experiences/cicekliai/experiencecicekliai-devfest'25boothblurred.png" alt="DevFest Networking Event" class="w-full h-full object-cover zoomable cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 pb-4 md:pb-6 pointer-events-none">
+                            <p class="text-white text-center font-medium px-4 text-sm md:text-base tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">CicekliAI Roll-Up Banner</p>
+                        </div>
+                </div>
+                <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden border border-borderLight shadow-sm hover:shadow-md transition-shadow relative group">
+                    <img src="../images/experiences/cicekliai/experiencecicekliai-devfest'25bg.jpg" alt="CicekliAI Booth at DevFest" class="w-full h-full object-cover zoomable cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 pb-4 md:pb-6 pointer-events-none">
+                            <p class="text-white text-center font-medium px-4 text-sm md:text-base tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">DevFest'25</p>
+                        </div>
+                </div>
+                <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden border border-borderLight shadow-sm hover:shadow-md transition-shadow relative group">
+                    <img src="../images/experiences/cicekliai/experiencecicekliai-devfest'25aiphoto.png" alt="Technology Presentation" class="w-full h-full object-cover zoomable cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 pb-4 md:pb-6 pointer-events-none">
+                            <p class="text-white text-center font-medium px-4 text-sm md:text-base tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">Meet AI Emre Kantar</p>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Key Takeaways -->
+    <section id="takeaways" class="py-24 px-6 max-w-7xl mx-auto lg:pl-16">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h4 class="text-accent font-bold tracking-widest text-xs uppercase mb-3">Skills & Impact</h4>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-textPrimary mb-6">Key Takeaways</h2>
+            <p class="text-textSecondary text-lg">The core competencies developed through continuous research and leadership.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            
+            <div class="border-t-2 border-borderLight pt-6 group">
+                <h3 class="font-serif font-bold text-xl mb-3 text-textPrimary group-hover:text-accent transition-colors">Research & Trend Analysis</h3>
+                <p class="text-sm text-textSecondary leading-relaxed"></p>
+            </div>
+            
+            <div class="border-t-2 border-borderLight pt-6 group">
+                <h3 class="font-serif font-bold text-xl mb-3 text-textPrimary group-hover:text-accent transition-colors">Technology Communication</h3>
+                <p class="text-sm text-textSecondary leading-relaxed"></p>
+            </div>
+            
+            <div class="border-t-2 border-borderLight pt-6 group">
+                <h3 class="font-serif font-bold text-xl mb-3 text-textPrimary group-hover:text-accent transition-colors">Social Media Strategy</h3>
+                <p class="text-sm text-textSecondary leading-relaxed"></p>
+            </div>
+
+            <div class="border-t-2 border-borderLight pt-6 group">
+                <h3 class="font-serif font-bold text-xl mb-3 text-textPrimary group-hover:text-accent transition-colors">Team Leadership</h3>
+                <p class="text-sm text-textSecondary leading-relaxed"></p>
+            </div>
+
+            <div class="border-t-2 border-borderLight pt-6 group">
+                <h3 class="font-serif font-bold text-xl mb-3 text-textPrimary group-hover:text-accent transition-colors">Community Engagement</h3>
+                <p class="text-sm text-textSecondary leading-relaxed"></p>
+            </div>
+
+            <div class="border-t-2 border-borderLight pt-6 group">
+                <h3 class="font-serif font-bold text-xl mb-3 text-textPrimary group-hover:text-accent transition-colors">Networking</h3>
+                <p class="text-sm text-textSecondary leading-relaxed"></p>
+            </div>
+
+        </div>
+
+        <!--<div class="mt-20 max-w-4xl mx-auto text-center border-t border-borderLight pt-12">
+            <p class="font-serif text-2xl md:text-3xl text-textPrimary italic leading-relaxed">
+                "Understanding emerging technologies isn't just about reading code; it requires continuous learning, the ability to communicate complexity clearly, and the drive to collaborate with others."
+            </p>
+        </div>-->
+    </section>
+
+    <!-- Footer CTA -->
+    <footer class="bg-textPrimary text-background py-12 px-6 text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 lg:pl-16">
+            <div class="text-center md:text-left">
+                <p class="font-serif text-2xl font-bold mb-1">Emre Kantar</p>
+                <p class="text-background/50 text-xs mt-1">&copy; 2026 Emre Kantar. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6 text-sm font-semibold tracking-widest uppercase text-background/80">
+                <a href="https://linkedin.com/in/emre-kantar" target="_blank" class="hover:text-accent transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/90 items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300 opacity-0">
+    <button id="closeModal" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors focus:outline-none">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <img id="modalImage" src="" alt="Enlarged view" class="w-[95vw] md:w-[80vw] h-[90vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+</div>
+
+    <!-- Scripts -->
+    <script>
+        // Sidebar Scrollspy Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('header[id], section[id]');
+            const dots = document.querySelectorAll('nav.fixed.left-4 a');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-30% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        dots.forEach(dot => {
+                            const innerSpan = dot.querySelector('span:first-child');
+                            if (dot.getAttribute('href') === `#${id}`) {
+                                innerSpan.classList.remove('bg-background', 'border-borderLight');
+                                innerSpan.classList.add('bg-accent', 'border-accent', 'scale-125', 'shadow-sm');
+                            } else {
+                                innerSpan.classList.add('bg-background', 'border-borderLight');
+                                innerSpan.classList.remove('bg-accent', 'border-accent', 'scale-125', 'shadow-sm');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        });
+
+        // Image Zoom (Görsel Büyütme) Logic
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const closeBtn = document.getElementById('closeModal');
+const zoomableImages = document.querySelectorAll('.zoomable');
+
+// Görseli Açma Fonksiyonu
+function openModal(src) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    
+    // Animasyon için çok kısa bir gecikme
+    setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalImg.classList.remove('scale-95');
+        modalImg.classList.add('scale-100');
+    }, 10);
+    
+    modalImg.src = src;
+    document.body.style.overflow = 'hidden'; // Arka plan kaymasını engelle
+}
+
+// Görseli Kapatma Fonksiyonu
+function closeModal() {
+    modal.classList.add('opacity-0');
+    modalImg.classList.remove('scale-100');
+    modalImg.classList.add('scale-95');
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto'; // Arka plan kaymasını geri aç
+    }, 300); // Animasyon süresi kadar bekle
+}
+
+// Tüm "zoomable" resimlere tıklama özelliği ekle
+zoomableImages.forEach(img => {
+    img.addEventListener('click', function() {
+        openModal(this.src);
+    });
+});
+
+// X butonuna veya arka planın herhangi bir yerine tıklayınca kapat
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal(); 
+});
+
+// ESC tuşuna basınca kapatma özelliği (Ekstra Kullanıcı Deneyimi)
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape" && !modal.classList.contains('hidden')) {
+        closeModal();
+    }
+});
+    </script>
+</body>
+</html>
