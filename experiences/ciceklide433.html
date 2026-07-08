@@ -317,6 +317,23 @@
                 closeModal();
             }
         });
+
+        // --- Mobil Ekran görsel kapatma ---
+    modal.style.cursor = 'pointer';
+    modalImg.style.cursor = 'pointer';
+
+    closeBtn.addEventListener('touchend', function(e) {
+        e.preventDefault(); 
+        closeModal();
+    });
+
+    // 3. Mobilde hem siyah arka plana hem de resmin kendisine dokununca kapatır
+    modal.addEventListener('touchend', function(e) {
+        if (e.target === modal || e.target === modalImg) {
+            e.preventDefault();
+            closeModal();
+        }
+    });
     </script>
 </body>
 </html>
