@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeganTech WRO | Emre Kantar</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#F5F1E8',
+                        card: '#FAF8F4',
+                        text: '#2F2F2F',
+                        textLight: '#595959',
+                        accent: '#6B7A58',
+                        accentDark: '#3C4A2E',
+                        surface: '#EBE5D9',
+                        surfaceDark: '#D4CFC4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .tooltip:hover .tooltip-text, .tooltip:focus-within .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-text font-sans antialiased overflow-x-hidden w-full relative">
+
+    <nav class="fixed w-full top-0 z-50 bg-background/90 backdrop-blur-lg border-b border-surfaceDark transition-all shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <a href="../index.html" class="font-serif font-bold text-2xl tracking-tight text-accentDark">
+                Emre Kantar
+            </a>
+
+            <a href="../index.html#flythrough" class="md:hidden flex items-center gap-1 text-text hover:text-accent transition-colors font-semibold text-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-widest uppercase text-textLight">
+                <a href="../index.html#aegantech" class="flex items-center gap-2 text-text hover:text-accent transition-colors group mr-2">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back
+                </a>
+                <span class="w-px h-4 bg-surfaceDark"></span>
+                <a href="../index.html" class="hover:text-accent transition-colors">Home</a>
+                <a href="../index.html#projects" class="text-accent transition-colors">Projects</a>
+                <a href="../index.html#experience" class="hover:text-accent transition-colors">Experience</a>
+                <a href="../journey.html" class="hover:text-accent transition-colors">My Journey</a>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="fixed left-4 xl:left-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col items-center py-6 px-3 bg-white/40 backdrop-blur-md rounded-full shadow-lg border border-white/50">
+        <div class="absolute left-1/2 transform -translate-x-1/2 top-10 bottom-10 w-px bg-text/20 z-0"></div>
+        
+        <a href="#hero" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Overview</span>
+        </a>
+        <a href="#the-crisis" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">The Crisis</span>
+        </a>
+        <a href="#the-pivot" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Execution</span>
+        </a>
+        <a href="#takeaways" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Takeaways</span>
+        </a>
+    </nav>
+
+    <header id="hero" class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-7xl mx-auto min-h-[75vh] flex items-center relative z-10 border-b border-surfaceDark">
+        <div class="flex flex-col md:flex-row gap-12 lg:gap-16 items-center w-full lg:pl-16">
+            
+            <div class="w-full md:w-1/2 animate-fade-in mt-6 md:mt-0 order-1 md:order-1">
+                <p class="text-accentDark font-bold tracking-widest text-xs sm:text-sm uppercase mb-4">World Robot Olympiad 2024</p>
+                <h1 class="font-serif text-5xl md:text-6xl font-bold leading-tight mb-4 text-text">
+                    AeganTech
+                </h1>
+                <p class="text-xl md:text-2xl font-serif italic text-accentDark mb-10">
+                    Responding proactively when everything breaks is a critical engineering skill.
+                </p>
+                
+                <div class="space-y-6 mb-10 border-l-2 border-accent pl-5">
+                    <div>
+                        <h3 class="text-xs font-bold text-textLight uppercase tracking-widest mb-1">My Role</h3>
+                        <p class="text-text font-medium text-lg">Mechanical Design, Technical Documentation, Algorithm Logic</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-bold text-textLight uppercase tracking-widest mb-1">Result</h3>
+                        <p class="text-text font-medium text-lg">3rd Place, Future Engineers Category</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 relative animate-fade-in order-2 md:order-2 group" style="animation-delay: 0.1s;">
+                <div class="absolute inset-0 bg-surfaceDark translate-x-3 translate-y-3 rounded-2xl hidden sm:block"></div>
+                <div class="relative w-full h-[300px] md:h-[450px] rounded-2xl overflow-hidden border-4 border-card shadow-2xl bg-surfaceDark flex items-center justify-center p-8">
+                    <img src="../images/projects/aegantech/projectaegantech-teamblurred.png" alt="Robotics Competition" class="w-full h-full object-cover zoomable cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 pb-4 md:pb-6 pointer-events-none">
+                            <p class="text-white text-center font-medium px-4 text-sm md:text-base tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">AeganTech Team Picture</p>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+     <section id="the-crisis" class="py-24 px-6 bg-surface border-b border-surfaceDark">
+        <div class="max-w-7xl mx-auto lg:pl-16">
+            <div class="max-w-5xl">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-text mb-8">The Hardware Crisis</h2>
+                
+                <div class="space-y-6 text-lg text-textLight font-light leading-relaxed">
+                    <p>
+                        Our original plan for the World Robot Olympiad (WRO) Future Engineers category was highly ambitious. We had spent weeks designing an autonomous vehicle built around a Raspberry Pi, utilizing a camera module and OpenCV for advanced image processing to navigate the track and read traffic lights.
+                    </p>
+                    <p>
+                        Then, just days before the competition, the Raspberry Pi burned out. We had no spare parts and absolutely no time to order a replacement. We had two choices: withdraw from the tournament, or completely redesign the robot from scratch with whatever we had lying around. 
+                    </p>
+                    <p class="font-medium text-text">
+                        We chose the latter.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="the-pivot" class="py-24 px-6 bg-background border-b border-surfaceDark">
+        <div class="max-w-7xl mx-auto lg:pl-16">
+            
+            <div class="flex flex-col md:flex-row gap-12 items-center mb-16">
+                
+                <div class="w-full md:w-3/5 lg:w-2/3">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-text mb-6">The Pivot: EV3 <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Sensors</h2>
+                    <p class="text-lg text-textLight leading-relaxed">
+                        With the camera and Pi gone, we pivoted to a LEGO Mindstorms EV3 system. My role immediately shifted into high gear across three different fronts: mechanical design, algorithm adaptation, and writing the technical documentation to justify our last-minute architecture to the judges.
+                    </p>
+                </div>
+
+                <div class="hidden md:block w-full md:w-2/5 lg:w-1/3 relative group">
+                    <div class="absolute inset-0 bg-accentDark translate-x-3 translate-y-3 rounded-2xl"></div>
+                    <div class="relative z-10 w-full aspect-[4/3] rounded-2xl shadow-xl border-4 border-card overflow-hidden">
+                        <img src="../images/projects/aegantech/projectaegantech-vehicle.jpg" alt="EV3 Sensor Pivot" class="w-full h-full object-cover  contrast-125 zoomable cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 pb-4 md:pb-6 pointer-events-none">
+                            <p class="text-white text-center font-medium px-4 text-sm md:text-base tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">Robot Side View</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-card p-8 rounded-2xl border-t-4 border-accent shadow-sm flex flex-col">
+                    <h3 class="font-serif text-xl font-bold text-text mb-3">Mechanical Structure</h3>
+                    <p class="text-sm text-textLight leading-relaxed mb-6">
+                        We rapidly rebuilt the vehicle with the EV3 structure. Integrated two Large Motors for driving, one Medium Motor for precise steering, and integrated our new "eyes"—two Ultrasonic sensors and a Color sensor.
+                    </p>
+                </div>
+
+                <div class="bg-card p-8 rounded-2xl border-t-4 border-surfaceDark shadow-sm flex flex-col">
+                    <h3 class="font-serif text-xl font-bold text-text mb-3">Algorithm Logic</h3>
+                    <p class="text-sm text-textLight leading-relaxed mb-6">
+                        Since we could not "see" the track with a camera anymore, I helped develop a strict distance-based algorithm. We used side-facing ultrasonic sensors to detect traffic lights based on distance thresholds (19cm to 40cm) and programmed the vehicle to align itself parallel to the borders upon detection.
+                    </p>
+                </div>
+
+                <div class="bg-card p-8 rounded-2xl border-t-4 border-accentDark shadow-sm flex flex-col">
+                    <h3 class="font-serif text-xl font-bold text-text mb-3">Technical Writing</h3>
+                    <p class="text-sm text-textLight leading-relaxed mb-6">
+                        A working robot is only half the score; the engineering notebook is the rest. Despite the chaos, I documented sensor connections, mechanical structure, and movement algorithm clearly and professionally.
+                    </p>
+                </div>
+            </div>
+
+            <div class="block md:hidden w-full mt-12 relative group">
+                <div class="absolute inset-0 bg-accentDark translate-x-3 translate-y-3 rounded-2xl"></div>
+                <div class="relative z-10 w-full aspect-[4/3] rounded-2xl shadow-xl border-4 border-card overflow-hidden">
+                    <img src="../images/projects/aegantech/projectaegantech-vehicle.jpg" alt="EV3 Sensor Pivot" class="w-full h-full object-cover  contrast-125 zoomable cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 pb-4 md:pb-6 pointer-events-none">
+                            <p class="text-white text-center font-medium px-4 text-sm md:text-base tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">Robot Side View</p>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="takeaways" class="py-24 px-6 bg-surface relative border-b border-surfaceDark overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[100px] translate-x-1/4 -translate-y-1/4 pointer-events-none hidden sm:block"></div>
+        
+        <div class="max-w-7xl mx-auto lg:pl-16 relative z-10 flex flex-col items-center text-center">
+            <div class="max-w-3xl mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-text">3rd Place <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Takeaways</h2>
+                <p class="text-textLight text-lg">We walked away with 3rd Place overall. It wasn't the robot we initially dreamed of, but it was the robot that worked.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12 max-w-4xl mx-auto w-full">
+                <div class="flex flex-col items-center text-center">
+                    <h3 class="font-serif font-bold text-xl mb-2 text-accentDark">Adaptability</h3>
+                    <p class="text-sm text-textLight leading-relaxed">Hardware fails. The ability to let go of an initial idea and rapidly build a viable alternative is the most important skill I gained from this competition.</p>
+                </div>
+                
+                <div class="flex flex-col items-center text-center">
+                    <h3 class="font-serif font-bold text-xl mb-2 text-accentDark">Deliverables</h3>
+                    <p class="text-sm text-textLight leading-relaxed">Writing formal engineering documentation while simultaneously rebuilding a robot taught me how to focus on the deliverable, even under pressure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-text text-white py-12 px-6 text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 lg:pl-16">
+            <div class="text-center md:text-left">
+                <p class="font-serif text-2xl font-bold mb-1">Emre Kantar</p>
+                <p class="text-white/50 text-xs mt-1">&copy; 2026 Emre Kantar. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6 text-sm font-semibold tracking-widest uppercase text-white/80">
+                <a href="https://linkedin.com/in/emre-kantar" target="_blank" class="hover:text-accent transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/90 items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300 opacity-0">
+    <button id="closeModal" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors focus:outline-none">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <img id="modalImage" src="" alt="Enlarged view" class="w-[95vw] md:w-[80vw] h-[90vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+</div>
+
+    <script>
+        // Sidebar Scrollspy Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('header[id], section[id]');
+            const dots = document.querySelectorAll('nav.fixed.left-4 a');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-30% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        dots.forEach(dot => {
+                            const innerSpan = dot.querySelector('span:first-child');
+                            if (dot.getAttribute('href') === `#${id}`) {
+                                innerSpan.classList.remove('bg-background', 'border-text/30');
+                                innerSpan.classList.add('bg-accent', 'border-accentDark', 'scale-150', 'shadow-[0_0_10px_rgba(107,122,88,0.7)]');
+                            } else {
+                                innerSpan.classList.add('bg-background', 'border-text/30');
+                                innerSpan.classList.remove('bg-accent', 'border-accentDark', 'scale-150', 'shadow-[0_0_10px_rgba(107,122,88,0.7)]');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        });
+
+        // Image Zoom (Görsel Büyütme) Logic
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const closeBtn = document.getElementById('closeModal');
+const zoomableImages = document.querySelectorAll('.zoomable');
+
+// Görseli Açma Fonksiyonu
+function openModal(src) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    
+    // Animasyon için çok kısa bir gecikme
+    setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalImg.classList.remove('scale-95');
+        modalImg.classList.add('scale-100');
+    }, 10);
+    
+    modalImg.src = src;
+    document.body.style.overflow = 'hidden'; // Arka plan kaymasını engelle
+}
+
+// Görseli Kapatma Fonksiyonu
+function closeModal() {
+    modal.classList.add('opacity-0');
+    modalImg.classList.remove('scale-100');
+    modalImg.classList.add('scale-95');
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto'; // Arka plan kaymasını geri aç
+    }, 300); // Animasyon süresi kadar bekle
+}
+
+// Tüm "zoomable" resimlere tıklama özelliği ekle
+zoomableImages.forEach(img => {
+    img.addEventListener('click', function() {
+        openModal(this.src);
+    });
+});
+
+// X butonuna veya arka planın herhangi bir yerine tıklayınca kapat
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal(); 
+});
+
+// ESC tuşuna basınca kapatma özelliği (Ekstra Kullanıcı Deneyimi)
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape" && !modal.classList.contains('hidden')) {
+        closeModal();
+    }
+});
+    </script>
+</body>
+</html>

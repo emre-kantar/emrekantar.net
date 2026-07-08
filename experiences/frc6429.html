@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRC 6429 | Emre Kantar</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#F5F1E8',
+                        card: '#FAF8F4',
+                        text: '#2F2F2F',
+                        textLight: '#595959',
+                        accent: '#6B7A58',
+                        accentDark: '#3C4A2E',
+                        surface: '#EBE5D9',
+                        surfaceDark: '#D4CFC4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .tooltip:hover .tooltip-text, .tooltip:focus-within .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-text font-sans antialiased overflow-x-hidden w-full relative">
+
+    <nav class="fixed w-full top-0 z-50 bg-background/90 backdrop-blur-lg border-b border-surfaceDark transition-all shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <a href="index.html" class="font-serif font-bold text-2xl tracking-tight text-accentDark">
+                Emre Kantar
+            </a>
+
+            <a href="../index.html#frc-6429" class="md:hidden flex items-center gap-1 text-text hover:text-accent transition-colors font-semibold text-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6 text-sm font-semibold tracking-widest uppercase text-textLight">
+                <a href="../index.html#emt-projects" class="flex items-center gap-2 text-text hover:text-accent transition-colors group mr-2">
+                    <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back
+                </a>
+                <span class="w-px h-4 bg-surfaceDark"></span>
+                <a href="../index.html" class="hover:text-accent transition-colors">Home</a>
+                <a href="../index.html#projects" class="hover:text-accent transition-colors">Projects</a>
+                <a href="../index.html#experience" class="text-accent transition-colors">Experience</a>
+                <a href="../journey.html" class="hover:text-accent transition-colors">My Journey</a>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="fixed left-4 xl:left-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col items-center py-6 px-3 bg-white/40 backdrop-blur-md rounded-full shadow-lg border border-white/50">
+        <div class="absolute left-1/2 transform -translate-x-1/2 top-10 bottom-10 w-px bg-text/20 z-0"></div>
+        
+        <a href="#hero" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Overview</span>
+        </a>
+        <a href="#perspective" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Perspective</span>
+        </a>
+        <a href="#contributions" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">My Role</span>
+        </a>
+        <a href="#pit" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Inside the Pit</span>
+        </a>
+        <a href="#season" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">2026 REBUILT Season</span>
+        </a>
+        <a href="#robot" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Meet TESSERACT</span>
+        </a>
+        <a href="#awards" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Awards</span>
+        </a>
+        <a href="#takeaways" class="relative z-10 w-8 h-8 flex items-center justify-center my-3 group">
+            <span class="w-3 h-3 rounded-full border-2 border-text/30 bg-background transition-all duration-300 group-hover:bg-accent group-hover:border-accentDark"></span>
+            <span class="absolute left-10 opacity-0 group-hover:opacity-100 text-[10px] font-bold tracking-widest uppercase bg-white px-2 py-1 rounded shadow-md text-text whitespace-nowrap transition-opacity">Takeaways</span>
+        </a>
+    </nav>
+
+    <header id="hero" class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-7xl mx-auto min-h-[85vh] flex items-center relative z-10 border-b border-surfaceDark">
+        <div class="flex flex-col md:flex-row gap-12 lg:gap-16 items-center w-full lg:pl-16">
+            
+            <div class="w-full md:w-1/2 animate-fade-in mt-6 md:mt-0 order-2 md:order-1">
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 text-text">
+                    FRC Team 6429<br>
+                    <span class="text-4xl md:text-5xl text-textLight">4th Dimension</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-serif italic text-accentDark mb-10">
+                    "Gears Only Work When Together"
+                </p>
+                
+                <div class="space-y-6 mb-10 border-l-2 border-accent pl-5">
+                    <div>
+                        <h3 class="text-xs font-bold text-textLight uppercase tracking-widest mb-1">Role</h3>
+                        <p class="text-text font-medium text-lg">CAD Sub-Team Member</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-bold text-textLight uppercase tracking-widest mb-1">Seasons</h3>
+                        <p class="text-text font-medium text-lg">2026 REBUILT</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-bold text-textLight uppercase tracking-widest mb-1">Skills Applied</h3>
+                        <p class="text-text font-medium text-lg">SOLIDWORKS CAD, Rapid Prototyping, Systems Integration, Mechanical Assembly, Under-Pressure Problem Solving</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 relative">
+                    <div class="tooltip relative inline-block w-full sm:w-auto z-50">
+                        <button class="w-full sm:w-auto bg-text text-background px-6 py-4 rounded-lg font-medium text-center hover:bg-accentDark transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                            What is FIRST Robotics Competition?
+                        </button>
+                        <div class="tooltip-text absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-[280px] sm:w-72 p-5 bg-card border border-surfaceDark text-text text-sm rounded-lg shadow-2xl z-[100] pointer-events-none">
+                            <span class="font-bold text-accentDark block mb-2">More than robots.</span>
+                            FIRST Robotics Competition (FRC) is a global engineering challenge where high school teams design, machine, and program industrial-size robots in two months, simulating a strict, real-world engineering and business environment.
+                            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-transparent border-b-surfaceDark"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 relative animate-fade-in order-1 md:order-2" style="animation-delay: 0.1s;">
+                <div class="absolute inset-0 bg-surfaceDark translate-x-3 translate-y-3 rounded-2xl hidden sm:block"></div>
+                <div class="relative w-full h-[350px] md:h-[550px] rounded-2xl overflow-hidden border-4 border-card shadow-2xl bg-surfaceDark flex items-center justify-center p-8">
+                    <img src="../images/experiences/frc6429/experiencefrc-kickoff26mechanicblurred.png" alt="Engineering team collaborating" class="w-full h-full object-cover zoomable cursor-pointer">
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+     <section id="perspective" class="py-24 px-6 bg-surface border-b border-surfaceDark">
+        <div class="max-w-7xl mx-auto lg:pl-16 flex flex-col md:flex-row gap-16 items-center">
+            <div class="w-full md:w-1/3 order-2 md:order-1 relative">
+                <div class="absolute inset-0 bg-accentDark translate-x-3 translate-y-3 rounded-2xl hidden sm:block"></div> 
+                <img src="../images/experiences/frc6429/experiencefrc-robotwithmeblurred.png" alt="Student thinking about engineering" class="relative z-10 w-full h-[400px] object-cover rounded-2xl shadow-xl border-4 border-card zoomable cursor-pointer">
+                
+            </div>
+            
+            <div class="w-full md:w-1/2 order-1 md:order-2">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-text mb-8">How FRC Changed My Perspective on Engineering</h2>
+                
+                <div class="space-y-6 text-lg text-textLight font-light leading-relaxed">
+                    <p>
+                        Engineering is not just about making things look good on a screen; it is about making them work in reality. FRC taught me that the best design is not always the most complex one—it's the one we can actually manufacture, maintain, and rely on when a match is on the line. 
+                    </p>
+                    <p>
+                        I learned to look past the CAD geometry and think about the system as a whole. That meant constantly asking myself how parts would be machined, how the team would assemble them, and how they would hold up to the physical beating they take on the field. It changed the way I approach every technical problem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contributions" class="py-24 px-6 max-w-7xl mx-auto lg:pl-16 bg-background border-b border-surfaceDark">
+        <div class="flex flex-col lg:flex-row gap-16 items-center">
+            
+            <div class="w-full lg:w-3/5 space-y-6">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-text mb-6">My Role in Team 6429</h2>
+                
+                <p class="text-lg text-textLight leading-relaxed">
+                    As a CAD Team Member for Team 6429, my focus was turning our team's strategy into reliable mechanical solutions. Throughout the season, I designed and iterated subsystems in SOLIDWORKS, always weighing the trade-offs between what looked good in theory and what we could actually manufacture with our resources.
+                </p>
+                <p class="text-lg text-textLight leading-relaxed">
+                    My role did not stop at the computer. I worked directly with the assembly, electronics, and programming teams to build, integrate, and test our prototypes. 
+                </p>
+                <p class="text-lg text-textLight leading-relaxed">
+                    The pace of FRC is relentless, but it taught me how to make quick, effective decisions under pressure and continuously refine a design until it performs consistently.
+                </p>
+            </div>
+
+            <div class="w-full lg:w-2/5">
+                <div class="w-full aspect-[4/5] bg-surfaceDark rounded-xl overflow-hidden shadow-lg border-4 border-card relative">
+                    <img src="../images/experiences/frc6429/experiencefrc-myroleblurred.png" alt="CAD Design and iteration" class="w-full h-full object-cover zoomable cursor-pointer">
+                </div>
+            </div>
+
+        </div>
+    </section>    
+
+    <section id="pit" class="bg-[#2a2c2d] text-white py-24 px-6 relative border-b border-surfaceDark overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[100px] translate-x-1/4 -translate-y-1/4 pointer-events-none hidden sm:block"></div>
+        
+        <div class="max-w-7xl mx-auto lg:pl-16 relative z-10 flex flex-col md:flex-row gap-16 items-center">
+            <div class="w-full md:w-1/2 order-2 md:order-1">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-black/40 aspect-[4/5] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="../images/experiences/frc6429/experiencefrc-halic26pit3blurred.png" alt="Gritty workspace and tools" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300 zoomable cursor-pointer">
+                    </div>
+                    <div class="bg-black/40 aspect-[4/5] rounded-xl overflow-hidden border border-white/10 shadow-2xl translate-y-8">
+                         <img src="../images/experiences/frc6429/experiencefrc-halic26pit2blurred.png" alt="Intense team coordination" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300 zoomable cursor-pointer">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 order-1 md:order-2">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-background">Inside the Pit</h2>
+                <div class="space-y-6 text-background/80 text-lg leading-relaxed font-light mb-10">
+                    <p>
+                        The pit at the Haliç Regional was the ultimate reality check. It’s a loud, high-stakes environment where you simply don't have the luxury to overthink. 
+                    </p>
+                    <p>
+                        If a mechanism breaks between matches, you have an unpredictable window—sometimes 30 minutes, sometimes 15, or even less—to diagnose the issue and get the robot back on the field. As someone specifically assigned to pit duty, working in this environment taught me how to think systematically under pressure, prioritize high-impact decisions, collaborate effectively, and solve technical problems when every minute mattered.
+                    </p>
+                    <p>
+                        It’s rarely about executing a perfect, textbook fix; it’s about making calculated decisions and getting the job done when it matters most.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="season" class="py-24 px-6 bg-surface border-b border-surfaceDark">
+    <div class="max-w-7xl mx-auto lg:pl-16">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            <div class="space-y-10">
+                <div>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-text mb-6">The 2026 REBUILT Season</h2>
+                    <p class="text-lg text-textLight leading-relaxed">
+                        The 2026 REBUILT game was a massive puzzle. The goal was to collect foam FUEL elements and score them into elevated HUBs, then climb a towering structure at the end of the match. The catch? The scoring zones constantly shifted during the game, forcing us to be incredibly efficient and cycle fast when our HUB was active.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-text mb-3">Strategic Hurdles</h3>
+                    <p class="text-textLight leading-relaxed">
+                        Every decision we made had to balance speed, reliability, and the physical constraints of the field. We had to optimize our cycle times to maximize throughput without getting stuck or drawing penalties.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-card p-8 rounded-2xl border-4 border-white shadow-lg sticky top-28 lg:row-span-2">
+                <h3 class="font-serif text-2xl font-bold text-text mb-6">Engineering Constraints</h3>
+                <ul class="space-y-4 text-textLight">
+                    <li class="flex items-start">
+                        <span class="text-accent mr-3 font-bold">•</span>
+                        <span><strong>Weight & Height:</strong> Robots were strictly capped at 52 kg (excluding battery and bumpers) and could not exceed a starting height of 76 cm.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-accent mr-3 font-bold">•</span>
+                        <span><strong>Expansion Limits:</strong> Mechanisms could only extend 30 cm beyond the frame perimeter, and strictly in one direction at a time.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-accent mr-3 font-bold">•</span>
+                        <span><strong>Terrain & Trade-offs:</strong> The field's neutral zone featured 16.5 cm tall bumps and trenches with only a 56.5 cm vertical clearance. This forced a critical choice: build tall to hold more FUEL but slowly cross the bumps, or build extremely low to speed through the trenches with less hopper capacity. We chose the trench.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="pt-2">
+                <a href="https://youtu.be/_fybREErgyM?si=Z1DJK2vWD8kWxj3B" target="_blank" class="inline-block bg-text text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-accentDark transition-colors">
+                    More About the 2026 REBUILT Season Game &rarr;
+                </a>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+
+    <section id="robot" class="bg-background py-24 px-6 relative border-b border-surfaceDark">
+        <div class="max-w-7xl mx-auto lg:pl-16">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-text mb-4">Meet Tesseract</h2>
+                <p class="text-textLight text-lg">Our solution to REBUILT.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-1/2 aspect-square bg-surface rounded-2xl border-4 border-white shadow-xl flex items-center justify-center p-2 overflow-hidden relative">
+                    <img src="../images/experiences/frc6429/experiencefrc-tesseract.jpg" alt="Industrial mechanism representing Tesseract" class="w-full h-full object-cover rounded-xl zoomable cursor-pointer">
+                    <div class="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-md border border-surfaceDark">
+                        <p class="text-xs font-bold tracking-widest uppercase text-textLight">Final Build</p>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <div class="border-l-2 border-accent pl-5">
+                        <h3 class="font-serif text-2xl font-bold text-text mb-2">Chassis: Swerve Drive</h3>
+                        <p class="text-textLight leading-relaxed">We went with a swerve drive to effortlessly weave through the field, dodge defenders, and align perfectly with the scoring zones.</p>
+                    </div>
+                    
+                    <div class="border-l-2 border-accent pl-5">
+                        <h3 class="font-serif text-2xl font-bold text-text mb-2">Intake <span class="font-['Baskerville','Georgia',serif] italic font-normal">&amp;</span> Routing</h3>
+                        <p class="text-textLight leading-relaxed">A low-profile pivot intake let us sweep up FUEL quickly and slip under the tight field trenches. Inside, a dual-spindexer kept the pieces moving smoothly without jamming.</p>
+                    </div>
+                    
+                    <div class="border-l-2 border-accent pl-5">
+                        <h3 class="font-serif text-2xl font-bold text-text mb-2">Scoring: Double Shooter</h3>
+                        <p class="text-textLight leading-relaxed">We built a double shooter to empty our hopper into the HUB as fast as possible during our active scoring windows.</p>
+                    </div>
+                    
+                    <div class="bg-card p-6 rounded-lg border border-surfaceDark mt-6">
+                        <h3 class="text-sm font-bold tracking-widest text-accentDark uppercase mb-2">The Strategic Trade-off</h3>
+                        <p class="text-textLight text-sm italic">
+                            We prioritized rapid cycling over everything. We intentionally skipped the climber to spend the final seconds scoring FUEL, and designed a low-profile chassis to speed through the trenches—sacrificing hopper volume for much faster field traversal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="py-20 bg-surface border-b border-surfaceDark px-6 relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-accent/5 skew-x-12 transform origin-top hidden sm:block"></div>
+        <div class="max-w-7xl mx-auto lg:pl-16 relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/3">
+                <h2 class="font-serif text-4xl font-bold text-text mb-6">Awards</h2>
+                <p class="text-textLight leading-relaxed mb-6">Recognition of our holistic approach to engineering, community outreach, and technical documentation during the 2026 season.</p>
+            </div>
+            
+            <div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-card p-8 rounded-xl border border-surfaceDark shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-accent/20 text-accentDark rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <p class="text-accentDark font-bold text-sm tracking-widest uppercase mb-2">2026 Haliç Regional</p>
+                    <p class="text-text font-serif text-2xl font-bold">FIRST Impact Award</p>
+                </div>
+                
+                <div class="bg-card p-8 rounded-xl border border-surfaceDark shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-accent/20 text-accentDark rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <p class="text-accentDark font-bold text-sm tracking-widest uppercase mb-2">2026 FIRST Championship (Galileo)</p>
+                    <p class="text-text font-serif text-2xl font-bold mb-2">Engineering Inspiration Award</p>
+                    <p class="text-xs font-sans text-textLight uppercase tracking-widest">Sponsored by SpaceX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="takeaways" class="py-24 px-6 bg-background max-w-7xl mx-auto lg:pl-16">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-text mb-6">Key Takeaways</h2>
+            <p class="text-textLight text-lg">The core competencies I built beyond the CAD screen.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 max-w-5xl mx-auto mb-16">
+            <div>
+                <h3 class="font-serif font-bold text-xl mb-2 text-text">Systems Thinking</h3>
+                <p class="text-sm text-textLight leading-relaxed">Realizing that moving a mounting hole in CAD shifts the center of gravity, altering the software team's autonomous tuning.</p>
+            </div>
+            <div>
+                <h3 class="font-serif font-bold text-xl mb-2 text-text">Design Under Constraints</h3>
+                <p class="text-sm text-textLight leading-relaxed">Learning to operate effectively when creativity is bounded by strict weight limits, dimensions, and physics.</p>
+            </div>
+            <div>
+                <h3 class="font-serif font-bold text-xl mb-2 text-text">Rapid Iteration</h3>
+                <p class="text-sm text-textLight leading-relaxed">Embracing failure as data. Identifying mechanical flaws quickly to fix them before the next meeting.</p>
+            </div>
+            <div>
+                <h3 class="font-serif font-bold text-xl mb-2 text-text">Technical Communication</h3>
+                <p class="text-sm text-textLight leading-relaxed">Developing the vocabulary to accurately explain complex mechanical problems to peers and judges.</p>
+            </div>
+            <div>
+                <h3 class="font-serif font-bold text-xl mb-2 text-text">Manufacturing Awareness</h3>
+                <p class="text-sm text-textLight leading-relaxed">Understanding that a CAD model is functionally useless if it cannot be machined or assembled with our specific tools.</p>
+            </div>
+            <div>
+                <h3 class="font-serif font-bold text-xl mb-2 text-text">Teamwork</h3>
+                <p class="text-sm text-textLight leading-relaxed">Building something far larger and more complex than any single student could achieve alone.</p>
+            </div>
+        </div>
+        
+        <div class="max-w-3xl mx-auto text-center border-t border-surfaceDark pt-12">
+            <p class="font-serif text-2xl text-text italic">
+                FRC did not make me an engineer, but it gave me the exact foundation I needed to become one.
+            </p>
+        </div>
+    </section>
+
+    <section class="relative py-32 px-6 flex items-center justify-center overflow-hidden border-t border-surfaceDark">
+        <div class="absolute inset-0 z-0">
+            <img src="" alt="Large team group photo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-accentDark/90 backdrop-blur-sm"></div> 
+        </div>
+        
+        <div class="relative z-10 max-w-3xl mx-auto text-center text-white">
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">Interested in learning more about Team 6429?</h2>
+            <p class="text-lg text-white/80 mb-10 font-light leading-relaxed">
+                Explore the mission, outreach activities, competition history, and the deep-rooted engineering culture behind 4th Dimension.
+            </p>
+            <a href="https://frc6429com.wordpress.com/" target="_blank" class="inline-block bg-background text-text px-10 py-4 rounded-lg font-bold tracking-wide hover:bg-white hover:text-accentDark transition-all shadow-2xl hover:-translate-y-1">
+                Visit Team 6429 &rarr;
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-text text-white py-12 px-6 text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 lg:pl-16">
+            <div class="text-center md:text-left">
+                <p class="font-serif text-2xl font-bold mb-1">Emre Kantar</p>
+                <p class="text-white/50 text-xs mt-1">&copy; 2026 Emre Kantar. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6 text-sm font-semibold tracking-widest uppercase text-white/80">
+                <a href="https://linkedin.com/in/emre-kantar" target="_blank" class="hover:text-accent transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/90 items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300 opacity-0">
+    <button id="closeModal" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors focus:outline-none">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <img id="modalImage" src="" alt="Enlarged view" class="w-[95vw] md:w-[80vw] h-[90vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+</div>
+
+    <script>
+        // Sidebar Scrollspy Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('header[id], section[id]');
+            const dots = document.querySelectorAll('nav.fixed.left-4 a');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-30% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        dots.forEach(dot => {
+                            const innerSpan = dot.querySelector('span:first-child');
+                            if (dot.getAttribute('href') === `#${id}`) {
+                                innerSpan.classList.remove('bg-background', 'border-text/30');
+                                innerSpan.classList.add('bg-accent', 'border-accentDark', 'scale-150', 'shadow-[0_0_10px_rgba(107,122,88,0.7)]');
+                            } else {
+                                innerSpan.classList.add('bg-background', 'border-text/30');
+                                innerSpan.classList.remove('bg-accent', 'border-accentDark', 'scale-150', 'shadow-[0_0_10px_rgba(107,122,88,0.7)]');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        });
+
+        // Image Zoom (Görsel Büyütme) Logic
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const closeBtn = document.getElementById('closeModal');
+const zoomableImages = document.querySelectorAll('.zoomable');
+
+// Görseli Açma Fonksiyonu
+function openModal(src) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    
+    // Animasyon için çok kısa bir gecikme
+    setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalImg.classList.remove('scale-95');
+        modalImg.classList.add('scale-100');
+    }, 10);
+    
+    modalImg.src = src;
+    document.body.style.overflow = 'hidden'; // Arka plan kaymasını engelle
+}
+
+// Görseli Kapatma Fonksiyonu
+function closeModal() {
+    modal.classList.add('opacity-0');
+    modalImg.classList.remove('scale-100');
+    modalImg.classList.add('scale-95');
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto'; // Arka plan kaymasını geri aç
+    }, 300); // Animasyon süresi kadar bekle
+}
+
+// Tüm "zoomable" resimlere tıklama özelliği ekle
+zoomableImages.forEach(img => {
+    img.addEventListener('click', function() {
+        openModal(this.src);
+    });
+});
+
+// X butonuna veya arka planın herhangi bir yerine tıklayınca kapat
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal(); 
+});
+
+// ESC tuşuna basınca kapatma özelliği (Ekstra Kullanıcı Deneyimi)
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape" && !modal.classList.contains('hidden')) {
+        closeModal();
+    }
+});
+    </script>
+</body>
+</html>
