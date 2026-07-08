@@ -731,22 +731,25 @@
         if (e.target === modal) closeModal(); 
     });
 
-    // ESC tuşuna basınca kapatma özelliği (Ekstra Kullanıcı Deneyimi)
+    // ESC tuşuna basınca kapatma özelliği
     document.addEventListener('keydown', (e) => {
         if (e.key === "Escape" && !modal.classList.contains('hidden')) {
             closeModal();
         }
     });
 
-        // --- SADECE MOBİL (DOKUNMATİK EKRAN) İÇİN KAPATMA KODLARI ---
-    closeBtn.addEventListener('touchstart', function(e) {
-        e.preventDefault(); // Mobilde tıklama çakışmasını ve algılama gecikmesini önler
+        // --- Mobil Ekran görsel kapatma ---
+    modal.style.cursor = 'pointer';
+    modalImg.style.cursor = 'pointer';
+
+    closeBtn.addEventListener('touchend', function(e) {
+        e.preventDefault(); 
         closeModal();
     });
 
-    modal.addEventListener('touchstart', function(e) {
-        // Sadece siyah arka plana dokunulduğunda kapatır
-        if (e.target === modal) {
+    // 3. Mobilde hem siyah arka plana hem de resmin kendisine dokununca kapatır
+    modal.addEventListener('touchend', function(e) {
+        if (e.target === modal || e.target === modalImg) {
             e.preventDefault();
             closeModal();
         }
