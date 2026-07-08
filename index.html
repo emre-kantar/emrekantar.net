@@ -737,6 +737,20 @@
             closeModal();
         }
     });
+
+        // --- SADECE MOBİL (DOKUNMATİK EKRAN) İÇİN KAPATMA KODLARI ---
+    closeBtn.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Mobilde tıklama çakışmasını ve algılama gecikmesini önler
+        closeModal();
+    });
+
+    modal.addEventListener('touchstart', function(e) {
+        // Sadece siyah arka plana dokunulduğunda kapatır
+        if (e.target === modal) {
+            e.preventDefault();
+            closeModal();
+        }
+    });
 </script>
 </body>
 </html>
